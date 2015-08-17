@@ -114,7 +114,7 @@
     * @param void
     * @return Logger
     */
-    function &instance() {
+    static function &instance() {
       static $instance = null;
       if($instance === null) {
         $instance = new Logger();

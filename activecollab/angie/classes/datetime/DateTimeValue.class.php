@@ -55,7 +55,11 @@
      * @param integer $year
      * @return DateTimeValue
      */
-    function make($hour, $minute, $second, $month, $day, $year) {
+     function make($month, $day, $year) {
+         die("Congrats. You've just found a bug in " . __FILE__ . ':' . __LINE__);
+     }
+
+    function make2($hour, $minute, $second, $month, $day, $year) {
       return new DateTimeValue(mktime($hour, $minute, $second, $month, $day, $year));
     } // make
     
