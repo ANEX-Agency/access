@@ -1,0 +1,15 @@
+<?php return array (
+  'No tasks here' => 'Keine Aufgaben',
+  'Calendar' => 'Kalender',
+  'iCalendar' => 'iCalendar',
+  'Schedule' => 'Terminplan',
+  'Sunday' => 'Sonntag',
+  'Monday' => 'Montag',
+  'Tuesday ' => 'Dienstag',
+  'Wednesday' => 'Mittwoch',
+  'Thursday' => 'Donnerstag',
+  'Friday' => 'Freitag',
+  'Saturday' => 'Samstag',
+  'Tickets' => 'Tickets',
+  'Tasks' => 'Aufgaben',
+) ?>

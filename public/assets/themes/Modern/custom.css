@@ -1,0 +1,105 @@
+
+/**** CUSTOM THEME STYLES ****/
+
+/*   This file can be used to add your own customisations (like background, link colours, width dimensions etc.) to the theme.
+/*   Putting your customisations here means it will survive future theme upgrades!
+/* 
+/*   Steps to enable this feature:
+/* 
+/*   1) RENAME this file to "custom.css"
+/*   2) Upload to your theme directory (where the "theme.css" file is)
+/*   3) That's it - add your custom style here.
+/* 
+/*   IMPORTANT:
+/*   If the Class or ID of the style you're customising is already used in the main "theme.css" file, 
+/*   we recommend you add "!important" to each attribute in this file to help force your customisations override 
+/*   the ones mentioned in the "theme.css" file.
+/* 
+/*   Example for customising the background:
+/* 
+/*   body {
+/* 	       background: #333333 url(images/your-background.jpg) repeat-x center top !important;
+/* 	      }
+/*
+/*   Example for customising link colour:
+/*
+/*   a,
+/*   #pages .object_list td a,
+/*   .object_list .discussions td a,
+/*   .object_list .documents_table td a
+/*        {
+/*	       color: HotPink !important;
+/*        } 
+/* 
+/*    Need Support? Contact Creative World at http://www.creativeworld.com.au and we'll be happy to help
+/* 
+/*   ADD YOUR CUSTOM STYLES BELOW   */
+
+body {background: url(images/bg-ios-linen.jpg) repeat !important;}
+
+#header {padding: 0 !important;}
+#logged_user {margin: 0 !important;}
+
+#menu * {border: none !important;}
+
+#tabs ul li.first a,
+#tabs ul li.first a:hover,
+#logged_user .inner a + a,
+#tabs ul li a.current,
+.category_list .selected a,
+a:hover,
+#tabs ul li a:hover.current,
+#tabs ul li.first a.current,
+#pinned_projects a.project_link:hover,
+.object_list .discussions td a:hover,
+.object_list .documents_table td a:hover {
+	color: #C30 !important;
+	
+	-o-transition: color .1s linear;
+	-moz-transition: color .1s linear;
+	-webkit-transition: color .1s linear;
+	transition: color .1s linear;
+}
+
+.ui-sortable li:hover {
+	background-color: #EEE !important;
+	
+	-o-transition: background .1s linear;
+	-moz-transition: background .1s linear;
+	-webkit-transition: background .1s linear;
+	transition: background .1s linear;
+}
+	
+p#powered_by {min-height: 0 !important; background: transparent !important;}
+p#powered_by a {display: none;}
+
+.site_logo {
+	width: 220px;
+	height: 85px;
+	position: absolute;
+	top: -23px;
+	left: 0;
+	background: url(images/logo-access.png) center no-repeat;
+}
+#menu ul.group li a {background: none !important;}
+
+
+span.label-badge {}
+span.label-badge a {
+	padding: 1px 5px; 
+	margin: 0 0 0 10px; 
+	color: #999; 
+	text-decoration: none; 
+	background: #EEE;
+	 
+	-o-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	 
+	-o-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-webkit-transition: all .1s linear;
+	transition: all .1s linear;
+}
+span.label-badge a:hover {color: #FFF !important; background: #C30;}

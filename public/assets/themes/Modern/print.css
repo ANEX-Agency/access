@@ -1,0 +1,49 @@
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	}
+	
+/* hide default recent activity icons */
+#recent_activities div.activity div.log_icon img { display:none;}
+
+/* show new Modern theme icons */
+/* load sprite images */
+#recent_activities div.activity div.log_icon {
+	display: list-item;              
+	list-style-image: url(images/recent-item-bars.png);
+	list-style-position: inside;      
+	letter-spacing: -1000em;          
+	font-size: 1pt;                   
+	color: #fff;
+	height:20px; width:110px; margin-top:-3px; }
+
+/* load background positions images */
+.ticket_activity .log_icon {background-position: 0 0; }
+.ticket_activity .log_icon {background-position: 0 0; }
+.comment_activity .log_icon { background-position:0 -100px;}
+.discussion_activity .log_icon { background-position: 0 -140px;}
+.milestone_activity .log_icon { background-position: 0 -60px;}
+.file_activity .log_icon { background-position: 0 -160px;}
+.checklist_activity .log_icon { background-position: 0 -40px;}
+.task_activity .log_icon { background-position: 0 -80px;}
+.page_activity .log_icon {background-position: 0 -20px;}
+.timerecord_activity .log_icon {background-position: 0 -180px;}
+.category_activity .log_icon {background-position: 0 -280px;}
+
+/* completed activity */
+.ticket_activity.taskcompletedactivitylog_activity .log_icon { background-position: 0 -200px;}
+.task_activity.taskcompletedactivitylog_activity .log_icon { background-position: 0 -220px;}
+.checklist_activity.taskcompletedactivitylog_activity .log_icon { background-position: 0 -240px;}
+.milestone_activity.taskcompletedactivitylog_activity .log_icon { background-position: 0 -260px;}
+
+/* trashed item bar */
+.comment_activity.objecttrashedactivitylog_activity .log_icon,
+.task_activity.objecttrashedactivitylog_activity .log_icon { background-position: 0 -120px;}
+
+
+display: list-item;              
+	list-style-image: url(banner.jpg);
+	list-style-position: inside;      
+	letter-spacing: -1000em;          
+	font-size: 1pt;                   
+	color: #fff; 

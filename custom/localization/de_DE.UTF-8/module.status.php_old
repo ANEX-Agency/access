@@ -1,0 +1,11 @@
+<?php return array (
+  'Status Archive' => 'Historie',
+  'User' => 'Benutzer',
+  'All users' => 'Alle Benutzer',
+  'User has no status updates' => 'Benutzer hat keine Statusmeldungen',
+  'What are you doing?' => 'Was machen Sie gerade?',
+  'Track Using Rss' => 'Mit RSS verfolgen',
+  'Recent Messages' => 'Letzte Nachrichten',
+  'activeCollab Status updates' => 'activeCollab Statusmeldungen',
+  'Status Updates' => 'Statusmeldungen',
+) ?>
