@@ -404,9 +404,11 @@
    * @param mixed $value
    * @return boolean
    */
-  function boolval($value) {
-    return (boolean) $value;
-  } // boolval
+  if(!function_exists('boolval')) {
+    function boolval($value) {
+      return (boolean) $value;
+    } // boolval
+  }
   
   /**
    * Finds first available filename in uploads folder
