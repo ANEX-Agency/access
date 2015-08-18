@@ -8,10 +8,13 @@
         {label for=projectOverview}Overview{/label}
         {editor_field name='project[overview]' id=projectOverview inline_attachments=$project_data.inline_attachments}{$project_data.overview}{/editor_field}
     {/wrap}
-  
-	<input type="text" name="project[link_name_1]" placeholder="Link Name" value="{$project_data.link_name_1}" />
-
-
+    
+    {wrap field=links}
+        {label for=projectAdditionalLinks}Additional Links{/label}
+        <input type="text" name="project[link_name_1]" placeholder="Link Name" value="{$project_data.link_name_1}" />
+        <input type="text" name="project[link_url_1]" placeholder="Link URL" value="{$project_data.link_url_1}" />
+    {/wrap}
+    
 {if $logged_user->canSeePrivate()}
   {assign_var name=project_visibility_normal_caption}{lang}Normal &mdash; <span class="details">Visible to everyone involved with the project</span>{/lang}{/assign_var}
   {assign_var name=project_visibility_private_caption}{lang}Private &mdash; <span class="details">Visible only to people with can_see_private_objects role permission</span>{/lang}{/assign_var}

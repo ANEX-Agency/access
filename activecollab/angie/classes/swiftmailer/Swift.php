@@ -321,7 +321,7 @@ class Swift
     if ($command !== "")
     {
       Swift_ClassLoader::load("Swift_Events_CommandEvent");
-      $command_event =& new Swift_Events_CommandEvent($command, $code);
+      $command_event = new Swift_Events_CommandEvent($command, $code);
       $command = null; //For memory reasons
       $this->notifyListeners($command_event, "BeforeCommandListener");
       if ($log->hasLevel(SWIFT_LOG_NETWORK) && $code != -1) $log->add($command_event->getString(), SWIFT_LOG_COMMAND);
@@ -333,7 +333,7 @@ class Swift
     if ($code == -1) return $null;
     
     Swift_ClassLoader::load("Swift_Events_ResponseEvent");
-    $response_event =& new Swift_Events_ResponseEvent($this->connection->read());
+    $response_event = new Swift_Events_ResponseEvent($this->connection->read());
     $this->notifyListeners($response_event, "ResponseListener");
     if ($log->hasLevel(SWIFT_LOG_NETWORK)) $log->add($response_event->getString(), SWIFT_LOG_RESPONSE);
     if ($command !== "" && $command_event->getCode() !== null)
@@ -371,7 +371,7 @@ class Swift
     
     if (is_string($recipients) && preg_match("/^" . $encoder->CHEAP_ADDRESS_RE . "\$/", $recipients))
     {
-      $recipients =& new Swift_Address($recipients);
+      $recipients = new Swift_Address($recipients);
     }
     elseif (!is_a($recipients, "Swift_AddressContainer"))
     {
@@ -382,7 +382,7 @@ class Swift
       
     if (is_string($from) && preg_match("/^" . $encoder->CHEAP_ADDRESS_RE . "\$/", $from))
     {
-      $from =& new Swift_Address($from);
+      $from = new Swift_Address($from);
     }
     elseif (!is_a($from, "Swift_Address"))
     {
@@ -401,12 +401,12 @@ class Swift
     $list =& $recipients;
     if (is_a($recipients, "Swift_Address"))
     {
-      $list =& new Swift_RecipientList();
+      $list = new Swift_RecipientList();
       $list->addTo($recipients);
     }
     
     Swift_ClassLoader::load("Swift_Events_SendEvent");
-    $send_event =& new Swift_Events_SendEvent($message, $list, $from, 0);
+    $send_event = new Swift_Events_SendEvent($message, $list, $from, 0);
     
     $this->notifyListeners($send_event, "BeforeSendListener");
     
@@ -554,7 +554,7 @@ class Swift
       trigger_error("Swift::batchSend expects parameter 2 to be instance of Swift_RecipientList.");
       return;
     }
-    $batch =& new Swift_BatchMailer($this);
+    $batch = new Swift_BatchMailer($this);
     return $batch->send($message, $to, $from);
   }
 }

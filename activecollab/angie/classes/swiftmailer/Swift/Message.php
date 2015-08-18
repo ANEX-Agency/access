@@ -613,7 +613,7 @@ class Swift_Message extends Swift_Message_Mime
    */
   function moveBranchIn($type, $nested_type, &$from, $old_branch, $new_branch, $tag)
   {
-    $new =& new Swift_Message_Part();
+    $new = new Swift_Message_Part();
     $new->setContentType($type);
     $parentRef =& $this->getReference("parent", $new_branch);
     $parentRef->addChild($new, $tag, -1);
