@@ -19,14 +19,14 @@
      *
      * @var string
      */
-    var $version = '2.3';
+    var $version = '1.0.0';
     
     /**
      * API version
      *
      * @var string
      */
-    var $api_version = '2.0';
+    var $api_version = '1.0.0';
     
     /**
      * Construct ActiveCollab object

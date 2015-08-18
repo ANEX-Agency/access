@@ -362,8 +362,6 @@
       $project_data = $this->request->post('project');
 	  
       if(!is_array($project_data)) {
-		  echo 'FUCK IT';
-		  var_dump($this->active_project);
         $project_data = array(
           'name' => $this->active_project->getName(),
           'overview' => $this->active_project->getOverview(),
@@ -372,16 +370,31 @@
           'group_id' => $this->active_project->getGroupId(),
           'company_id' => $this->active_project->getCompanyId(),
           'default_visibility' => $this->active_project->getDefaultVisibility(),
-          'starts_on' => $this->active_project->getStartsOn()
+          'starts_on' => $this->active_project->getStartsOn(),
+          'links' => $this->active_project->getLinks(),
         );
+      } else {
+
+        if(isset($project_data['links'])) {
+          foreach($project_data['links'] as $k => &$l) {
+
+            if(empty($l['name']) || empty($l['url']))
+              unset($project_data['links'][$k]);
+            else
+              $l['url'] = filter_var($l['url'], FILTER_SANITIZE_URL);
+          }
+        }
+
       } // if
 
+      $project_data['links'] = array_values($project_data['links']); 
+
       $this->smarty->assign('project_data', $project_data);
-	  
-	  //var_dump($project_data);
       
       if($this->request->isSubmitted()) {
         db_begin_work();
+
+        ProjectConfigOptions::setValue('_links', $project_data['links'], $this->active_project);
         
         $old_name = $this->active_project->getName();
         $this->active_project->setAttributes($project_data);

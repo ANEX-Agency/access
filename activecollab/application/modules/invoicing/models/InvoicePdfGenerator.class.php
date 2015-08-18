@@ -581,7 +581,7 @@
       } // if
       
       $this->SetTitle($this->invoice->getName(), true);
-      $this->SetAuthor('activeCollab (http://www.vbsupport.org/forum/)');
+      $this->SetAuthor('ANEX');
       $this->SetAutoPageBreak(true, 20);
       $this->AddPage($this->paper_orientation, $this->paper_format);
       $this->SetFont('', '', 12);

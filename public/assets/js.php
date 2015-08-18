@@ -29,7 +29,7 @@
   $files = array(
     ASSETS_PATH . '/javascript/date.js',
     ASSETS_PATH . '/javascript/jquery.js',
-    ASSETS_PATH . '/javascript/jquery.dimensions.js',
+    //ASSETS_PATH . '/javascript/jquery.dimensions.js',
     ASSETS_PATH . '/javascript/jquery.bgiframe.js',
     ASSETS_PATH . '/javascript/jquery.form.js',
     ASSETS_PATH . '/javascript/jquery.blockui.js',
@@ -38,7 +38,7 @@
     ASSETS_PATH . '/javascript/jquery.checkboxes.js',
     ASSETS_PATH . '/javascript/jquery.datepicker.js',
     ASSETS_PATH . '/javascript/jquery.scrollTo.js',
-    ASSETS_PATH . '/javascript/jquery.scrollTo.js',
+    //ASSETS_PATH . '/javascript/jquery.scrollTo.js',
     ASSETS_PATH . '/javascript/jquery.scalebigimages.js',
     ASSETS_PATH . '/javascript/jquery.ui.js',
     ASSETS_PATH . '/javascript/jquery.cookie.js',

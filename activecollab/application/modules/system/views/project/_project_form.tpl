@@ -11,8 +11,27 @@
     
     {wrap field=links}
         {label for=projectAdditionalLinks}Additional Links{/label}
-        <input type="text" name="project[link_name_1]" placeholder="Link Name" value="{$project_data.link_name_1}" />
-        <input type="text" name="project[link_url_1]" placeholder="Link URL" value="{$project_data.link_url_1}" />
+
+        {foreach from=$project_data.links key=k item=item}
+        	<div class="wrap wrap-fields">
+                <input type="text" name="project[links][{$k}][name]" placeholder="Link Name" value="{$item.name}" />
+                <input type="text" name="project[links][{$k}][url]" placeholder="Link URL" value="{$item.url}" />
+            </div>
+        {/foreach}
+        
+        <a class="btn btn-secondary" href="#">Add another field</a>
+
+        <!--<input type="text" name="project[links][new0][name]" placeholder="Link Name" value="" />
+        <input type="text" name="project[links][new0][url]" placeholder="Link URL" value="" />
+
+        <input type="text" name="project[links][new1][name]" placeholder="Link Name" value="" />
+        <input type="text" name="project[links][new1][url]" placeholder="Link URL" value="" />
+
+        <input type="text" name="project[links][new2][name]" placeholder="Link Name" value="" />
+        <input type="text" name="project[links][new2][url]" placeholder="Link URL" value="" />
+
+        <input type="text" name="project[links][new3][name]" placeholder="Link Name" value="" />
+        <input type="text" name="project[links][new3][url]" placeholder="Link URL" value="" />-->
     {/wrap}
     
 {if $logged_user->canSeePrivate()}

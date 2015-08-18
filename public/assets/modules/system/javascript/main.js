@@ -1907,16 +1907,17 @@ App.system.QuickAdd = function() {
         } // if
               
         step_1.find('.continue').click(function () {
+
           App.system.QuickAdd.init_step_2(
-            project_chooser.find('input[checked=true]').val(), // project id
-            object_chooser.find('input[checked=true]').val(), // object type
-            object_chooser.find('input[checked=true]').attr('quick_add_url'), // quick_add url
-            project_chooser.find('input[checked=true]').parent().text(), // project name
-            object_chooser.find('input[checked=true]').parent().text() // translated object type
+            project_chooser.find('input:checked').val(), // project id
+            object_chooser.find('input:checked').val(), // object type
+            object_chooser.find('input:checked').attr('quick_add_url'), // quick_add url
+            project_chooser.find('input:checked').parent().text(), // project name
+            object_chooser.find('input:checked').parent().text() // translated object type
           );
           return false;
         });
-        
+
         var project_chooser = step_1.find('#project_id:first');
         var object_chooser = step_1.find('#object_chooser:first');
         
@@ -1979,11 +1980,11 @@ App.system.QuickAdd = function() {
           }).keydown(function(event) {
             if ((event.keyCode == 13) || (event.keyCode == 32)) {
               App.system.QuickAdd.init_step_2(
-                project_chooser.find('input[checked=true]').val(), // project id
-                object_chooser.find('input[checked=true]').val(), // object type
-                object_chooser.find('input[checked=true]').attr('quick_add_url'), // quick_add url
-                project_chooser.find('input[checked=true]').parent().text(), // project name
-                object_chooser.find('input[checked=true]').parent().text() // translated object type
+                project_chooser.find('input:checked').val(), // project id
+                object_chooser.find('input:checked').val(), // object type
+                object_chooser.find('input:checked').attr('quick_add_url'), // quick_add url
+                project_chooser.find('input:checked').parent().text(), // project name
+                object_chooser.find('input:checked').parent().text() // translated object type
               );
             } // if
             if (event.keyCode == 9) {

@@ -264,6 +264,10 @@
       } // if
       return $this->options[$user->getId()];
     } // getOptions
+
+    public function getLinks() {
+      return ProjectConfigOptions::getValue('_links', $this);
+    }
     
     /**
      * Mark this object as completed

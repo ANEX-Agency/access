@@ -87,6 +87,7 @@
   
   set_for_autoload(array(
     'CompanyConfigOptions' => SYSTEM_MODULE_PATH . '/models/CompanyConfigOptions.class.php',
+    'ProjectConfigOptions' => SYSTEM_MODULE_PATH . '/models/ProjectConfigOptions.class.php',
     'PinnedProjects' => SYSTEM_MODULE_PATH . '/models/PinnedProjects.class.php',
     'AnonymousUser' => SYSTEM_MODULE_PATH . '/models/AnonymousUser.class.php',
     'Thumbnails' => SYSTEM_MODULE_PATH . '/models/Thumbnails.class.php',

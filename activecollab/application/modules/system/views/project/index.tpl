@@ -101,9 +101,17 @@
             <h2>{$active_project->getName()|clean}</h2>
           
             <div class="project-header">
+            
                 <div class="project-header-left">
-                    <p class="project-header-description">{$active_project->getFormattedOverview()}</p>
+                
+                    <h3>Beschreibung:</h3>
+
+                    <div class="project-description">
+                    	{$active_project->getFormattedOverview()}
+                    </div>
+                    
                 </div>
+                
                 <div class="project-header-right">
                 
                     <h3>Details:</h3>
@@ -125,14 +133,16 @@
 
                 </div>
                 
-                <div class="project-header-links">
+                <div class="project-links">
+                
                     <ul>
-                        <li><a href="http://themeshift.com/theme/name">Info</a></li>
-                        <li><a href="http://themeshift.com/demo/name">Demo</a></li>
-                        <li><a href="http://support.themeshift.com/forum/name/">Support</a></li>
-                        <li><a href="http://themeshift.anex.at/content/playground/themeshift/name">Playground</a></li>
+                        {foreach from=$active_project->getLinks() item=item}
+                            <li><a href="{$item.url}" target="_blank">{$item.name}</a></li>
+                        {/foreach}
                     </ul>
-                </div>    
+                    
+                </div>
+                    
             </div>
             
         </div>

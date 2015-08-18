@@ -18,20 +18,24 @@
     * @return mixed
     */
     function getValue($name, $project) {
-      $cache_id = 'project_config_options_' . $project->getId();
+      //$cache_id = 'project_config_options_' . $project->getId();
       
-      $cached_value = cache_get($cache_id);
-      if(is_array($cached_value) && isset($cached_value[$name])) {
-        return $cached_value[$name];
-      } // if
+      //$cached_value = cache_get($cache_id);
+      //if(is_array($cached_value) && isset($cached_value[$name])) {
+      //  return $cached_value[$name];
+      //} // if
       
+      /*
       $option = ConfigOptions::findByName($name, PROJECT_CONFIG_OPTION);
       if(instance_of($option, 'ConfigOption')) {
+      */
+
         $record = db_execute_one('SELECT value FROM ' . TABLE_PREFIX . 'project_config_options WHERE project_id = ? AND name = ?', $project->getId(), $name);
         if(is_array($record) && isset($record['value'])) {
           $value = trim($record['value']) != '' ? unserialize($record['value']) : null;
         } else {
-          $value = $option->getValue();
+          //$value = $option->getValue();
+          $value = null;
         } // if
         
         if(is_array($cached_value)) {
@@ -43,9 +47,12 @@
         cache_set($cache_id, $cached_value);
         
         return $value;
+
+        /*
       } else {
         return new InvalidParamError('name', $name, "Project configuration option '$name' does not exist", true);
       } // if
+      */
     } // getValue
     
     /**
@@ -57,8 +64,13 @@
     * @return mixed
     */
     function setValue($name, $value, $project) {
+      /*
       $option = ConfigOptions::findByName($name, PROJECT_CONFIG_OPTION);
+
       if(instance_of($option, 'ConfigOption')) {
+
+      */
+
         $table = TABLE_PREFIX . 'project_config_options';
         
         $count = db_execute_one("SELECT COUNT(*) AS 'row_num' FROM $table WHERE project_id = ? AND name = ?", $project->getId(), $name);
@@ -69,9 +81,12 @@
         } // if
         
         return $result && !is_error($result) ? $value : $result;
+
+        /*
       } else {
         return new InvalidParamError('name', $name, "Project configuration option '$name' does not exist", true);
       } // if
+      */
     } // setValue
     
     /**

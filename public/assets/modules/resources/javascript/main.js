@@ -753,10 +753,14 @@ App.resources.AttachFiles = function() {
      * @param String wrapper_id
      */
     init : function(wrapper_id) {
+      
       var wrapper = $('#' + wrapper_id);
       var name_counter = 1;
       
-      var inputs_wrapper = $('<div class="attach_files_inputs"></div>').prependTo(wrapper);
+      //var inputs_wrapper = $('<div class="attach_files_inputs"></div>').prependTo(wrapper);
+      var inputs_wrapper = $('<div class="attach_files_inputs"></div>');
+      wrapper.html(inputs_wrapper);
+
       var max_files = parseInt(wrapper.attr('max_files'));
       
       if(max_files > 1) {
@@ -777,6 +781,7 @@ App.resources.AttachFiles = function() {
       var add_input = function() {
         var input_wrapper = $('<div class="attach_files_input"></div>');
         var input = $('<input type="file" name="attach_from_files_file_' + name_counter +'" />').appendTo(input_wrapper);
+
         name_counter++;
         if(max_files > 1) {
           var remove_link = $('<a href="#"><img src="' + App.data.assets_url + '/images/dismiss.gif" /></a>').appendTo(input_wrapper).click(function() {
@@ -1675,22 +1680,62 @@ App.widgets.ActiveReminders = function() {
  */
 $(document).ready(function() {
   
-  // Starred
-  $('#menu_item_starred_folder a').click(function() {
-    var link = $(this);
-    
-    App.ModalDialog.show('starred_objects_popup', App.lang('Starred'), $('<p><img src="' + App.data.assets_url + '/images/indicator.gif" alt="" /> ' + App.lang('Loading...') + '</p>').load(App.extendUrl(link.attr('href'), { async : 1 })), {
-      width: '500px'
-    });
-    
-    return false;
-  });
-   
-  if (!App.data.copyright_removed && $('#footer #powered_by a[href=http://www.vbsupport.org/forum/index.php]').length == 0) {
-    if ($('#footer').length == 0) {
-      $('body').append('<div id="footer"></div>');
-    } // if
-    $('#footer').prepend('<p id="powered_by"><a href="http://www.vbsupport.org/forum/index.php" target="_blank"><img src="' + App.data.assets_url + '/images/acpowered.gif" alt="NulleD By FintMax" /></a></p>').css('display', 'block').css('visibility','visible').css('position', 'static');
-    $('#powered_by').css('display', 'block').css('visibility','visible').css('position', 'static');
-  } // if
+	// Starred
+	$('#menu_item_starred_folder a').click(function() {
+		
+		var link = $(this);
+		
+		App.ModalDialog.show('starred_objects_popup', App.lang('Starred'), $('<p><img src="' + App.data.assets_url + '/images/indicator.gif" alt="" /> ' + App.lang('Loading...') + '</p>').load(App.extendUrl(link.attr('href'), { async : 1 })), {
+		width: '500px'
+		});
+	
+		return false;
+		
+	});
+  
+	$( 'html' ).addClass( 'js' );
+	
+	$( 'header' ).addClass( 'Fixed' );
+	
+	$( '#menu' ).prepend( '<a class="ab-item" href="#side-panel"><span class="lnr lnr-menu"></span></a>' );
+	
+	$( $( '#menu ul' ).clone() ).prependTo( '#side-panel nav' ); 
+	
+	$( "#side-panel").mmenu({
+//		"slidingSubmenus": false,
+		"extensions": [
+			"border-full",
+			"effect-slide-menu",
+			"effect-slide-panels-100",
+			"pageshadow",
+			"theme-dark"
+		],
+		"offCanvas": {
+			"zposition": "next",
+			"position":	"right"
+		},
+//		"autoHeight": true,
+//		"navbar": {
+//			"title": "ANEX ACCESS"
+//		},
+		'onClick': {
+			'close': false,
+			'preventDefault': false,
+			'setSelected': true
+		},
+		"navbars": [
+			{
+				"position": "top"
+			},
+//			{
+//				"position": "bottom",
+//				"content": [
+//					'<a href="//wpcasa.com" target="_blank"><i class="fa fa-globe"></i></a>',
+//					'<a href="//twitter.com/wpcasa"><i class="fa fa-twitter"></i></a>',
+//					'<a href="//www.facebook.com/wpcasa?ref=br_rs"><i class="fa fa-facebook"></i></a>'
+//				]
+//			}
+		]
+	});
+  	   
 });

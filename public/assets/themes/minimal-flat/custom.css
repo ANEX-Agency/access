@@ -37,21 +37,9 @@
 
 body {
 	font-family: 'Noto Sans' !important;
+}
+
+body .app {
     background: url(assets/img/background.jpg) no-repeat center fixed;
-}
-
-button, a, p, blockquote, table, input {
-	font-family: 'Noto Sans' !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Open Sans' !important;
-	font-weight: 300;
-}
-
-.site_logo {
-	width: 235px;
-	top: -23px;
-	z-index: 1000;
-	background: url(content/img/logo-old.png) 0 no-repeat;
+    /*background: url(http://dev.anex.at/fabios/ui/v5.1/content/bg-default.jpg?v5.1.0) no-repeat center fixed;*/
 }

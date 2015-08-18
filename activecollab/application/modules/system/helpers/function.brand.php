@@ -11,7 +11,7 @@
   	if(isset($params['what'])) {
   	  switch($params['what']) {
   	    case 'logo':
-  	      return URL_BASE == ROOT_URL . '/' ? ROOT_URL . '/public/brand/logo.gif' : ROOT_URL . '/brand/logo.gif';
+  	      return URL_BASE == ROOT_URL . '/' ? ROOT_URL . '/public/brand/logo.png' : ROOT_URL . '/brand/logo.png';
   	    case 'favicon':
   	      return URL_BASE == ROOT_URL . '/' ? ROOT_URL . '/public/brand/favicon.png' : ROOT_URL . '/brand/favicon.png';
   	  } // switch
