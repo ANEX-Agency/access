@@ -14,7 +14,7 @@ App.timetracking.controllers.timetracking = {
   index : function() {
     $(document).ready(function() {      
       // mass edit functionality
-console.log("peng");
+
       var mass_edit = $('#mass_edit');
       mass_edit.enable = function () {
         mass_edit.find('select').attr('disabled',false);

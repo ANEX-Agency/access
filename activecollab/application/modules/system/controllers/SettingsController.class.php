@@ -82,15 +82,16 @@
 	  
 		if( !is_array( $appearance_data ) ) {
 		
-		$configs = ConfigOptions::findbyNames( array( 'logo', 'icon', 'background', 'primary_color', 'secondary_color' ) );
-		
-		$appearance_data = array(
-			'logo'				=> $configs['logo']->getValue(),
-			'icon'				=> $configs['icon']->getValue(),
-			'background'		=> $configs['background']->getValue(),
-			'primary_color'		=> $configs['primary_color']->getValue(),
-			'seconary_color'	=> $configs['secondary_color']->getValue()
-		);
+			$configs = ConfigOptions::findbyNames( array( 'logo', 'icon', 'background', 'primary_color', 'secondary_color', 'typeface' ) );
+			
+			$appearance_data = array(
+				'logo'				=> $configs['logo']->getValue(),
+				'icon'				=> $configs['icon']->getValue(),
+				'background'		=> $configs['background']->getValue(),
+				'primary_color'		=> $configs['primary_color']->getValue(),
+				'seconary_color'	=> $configs['secondary_color']->getValue(),
+				'typeface'			=> $configs['typeface']->getValue(),
+			);
 		
 		} // if
 		
@@ -98,15 +99,16 @@
 		
 		if($this->request->isSubmitted()) {
 		
-			ConfigOptions::setValue('logo', $appearance_data['logo']);
-			ConfigOptions::setValue('icon', $appearance_data['icon']);
-			ConfigOptions::setValue('background', $appearance_data['background']);
-			ConfigOptions::setValue('primary_color', $appearance_data['primary_color']);
-			ConfigOptions::setValue('secondary_color', $appearance_data['secondary_color']);
+			ConfigOptions::setValue( 'logo', $appearance_data['logo'] );
+			ConfigOptions::setValue( 'icon', $appearance_data['icon'] );
+			ConfigOptions::setValue( 'background', $appearance_data['background'] );
+			ConfigOptions::setValue( 'primary_color', $appearance_data['primary_color'] );
+			ConfigOptions::setValue( 'secondary_color', $appearance_data['secondary_color'] );
+			ConfigOptions::setValue( 'typeface', $appearance_data['typeface'] );
 			
-			flash_success('Appearance settings updated');
+			flash_success( 'Appearance settings updated' );
 			
-			$this->redirectTo('admin');
+			//$this->redirectTo('admin');
 		
 		} // if
 		

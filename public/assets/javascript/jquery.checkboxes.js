@@ -14,7 +14,12 @@ jQuery.fn.checkboxes = function(settings) {
     master_checkbox_class : 'master_checkbox',
     slave_checkbox_class  : 'slave_checkbox'
   }, settings);
-  
+
+  if(this.data('_checkboxes'))
+    return;
+
+  this.data('_checkboxes', true);
+
   return this.each(function() {
     var parent = $(this);
     
@@ -28,9 +33,12 @@ jQuery.fn.checkboxes = function(settings) {
      * button needs to be enabled or disabled
      */
     var enabled_disable_submit_button = function() {
-      var submit_enabled = (select_action.val() != '') && (parent.find('input.' + settings.slave_checkbox_class + ':checked').length > 0);
+
+      //var submit_enabled = (select_action.val() != '') && (parent.find('input.' + settings.slave_checkbox_class + ':checked').length > 0);
+      var submit_enabled = parent.find('input.' + settings.slave_checkbox_class + ':checked').length > 0;
+
       if(submit_enabled) {
-        submit_action.attr('disabled', '').removeClass('button_disabled');
+        submit_action.attr('disabled', false).removeClass('button_disabled');
       } else {
         submit_action.attr('disabled', 'submit').addClass('button_disabled');
       } // if
