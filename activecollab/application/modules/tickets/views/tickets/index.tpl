@@ -20,7 +20,7 @@
                   <span class="section_name_span_span">{object_link object=$tickets_by_milestone.milestone}</span>
                   <ul class="section_options">
                     {assign_var name=add_ticket_to_milestone_url}{assemble route=project_tickets_add project_id=$active_project->getId() milestone_id=$tickets_by_milestone.milestone->getId()}{/assign_var}
-                    <li><a href="{$add_ticket_to_milestone_url}">{lang}Add Ticket{/lang}</a></li>
+                    <li><a href="{$add_ticket_to_milestone_url}" class="btn">{lang}Add Ticket{/lang}</a></li>
                   </ul>
                   <div class="clear"></div>
                 </span></h2>
@@ -57,7 +57,7 @@
                 <span class="main_data">
                   <a href="{$ticket->getViewUrl()}">{$ticket->getName()|clean}</a>
                   {if $ticket->getParent()}<span class="label-badge">{object_link object=$ticket->getParent()}</span>{/if}
-                  
+                  <span class="label-badge-tags">{if $ticket->hasTags()}{object_tags object=$ticket}{/if}</span>
                   <input type="hidden" name="reorder_ticket[{$ticket->getId()}]" />
                 </span>
               </li>

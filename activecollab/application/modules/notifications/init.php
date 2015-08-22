@@ -51,7 +51,7 @@
   function notifications_module_notify_send($assignees, $object, $project, $due_on) {
   	
 	// Send notifications to all assigned users
-	    ApplicationMailer::send($assignees, 'notifications/notify_due', array(
+	    ApplicationMailer::instance()->send($assignees, 'notifications/notify_due', array(
 			'object_type'       => $object->getType(),
 			'object_name'       => $object->getName(),
 			'object_url'        => $object->getViewUrl(),

@@ -1697,6 +1697,28 @@ $(document).ready(function() {
 	
 	$( 'header' ).addClass( 'Fixed' );
 	
+	$( '.avatar + .panel' ).addClass( 'invisible' );
+		
+	$( '.avatar' ).on('click', function(e){	
+	
+		e.preventDefault();
+			
+		if( $(this).next( '.panel' ).hasClass( 'visible' ) ) {
+			
+			$(this).next( '.panel' ).addClass( 'invisible' );
+			$(this).next( '.panel' ).removeClass( 'visible' );
+			
+		} else {
+
+			$(this).next( '.panel' ).addClass( 'visible' );
+			$(this).next( '.panel' ).removeClass( 'invisible' );
+
+		}
+		
+		return false;
+		
+	});
+	
 	$( '#menu' ).prepend( '<a class="ab-item" href="#side-panel"><span class="lnr lnr-menu"></span></a>' );
 	
 	$( $( '#menu ul' ).clone() ).prependTo( '#side-panel nav' ); 
@@ -1712,12 +1734,12 @@ $(document).ready(function() {
 		],
 		"offCanvas": {
 			"zposition": "next",
-			"position":	"right"
+			"position":	"left"
 		},
 //		"autoHeight": true,
-//		"navbar": {
-//			"title": "ANEX ACCESS"
-//		},
+		"navbar": {
+			"title": "ANEX ACCESS"
+		},
 		'onClick': {
 			'close': false,
 			'preventDefault': false,

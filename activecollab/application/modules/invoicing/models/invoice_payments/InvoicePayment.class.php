@@ -148,7 +148,7 @@
                 $notify_users[] = $issued_to_user;
               } // if
               
-              ApplicationMailer::send($notify_users, 'invoicing/billed', array(
+              ApplicationMailer::instance()->send($notify_users, 'invoicing/billed', array(
                 'closed_by_name' => $logged_user->getDisplayName(),
                 'closed_by_url'  => $logged_user->getViewUrl(),
                 'invoice_number' => $invoice->getNumber(), 

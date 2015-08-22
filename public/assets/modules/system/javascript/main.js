@@ -245,8 +245,8 @@ App.system.controllers.settings = {
       var enable_disable_smtp_settings = function() {
         if($('#mailingType').val() == 'smtp') {
           $('#smtp_mailer_settings').show();
-          $('#smtp_mailer_settings input').attr('disabled', '');
-          $('#mailingSecurity').attr('disabled', '');
+          $('#smtp_mailer_settings input').attr('disabled', false);
+          $('#mailingSecurity').attr('disabled', false);
           
           $('#native_mailer_settings').hide();
         } else {

@@ -17,7 +17,13 @@
     $sections[ADMIN_SECTION_SYSTEM][SYSTEM_MODULE] = array(
       array(
         'name'        => lang('General'),
-        'description' => lang('General activeCollab settings'),
+        'description' => lang('General Access settings'),
+        'url'         => assemble_url('admin_settings_general'),
+        'icon'        => get_image_url('settings/general.gif', SYSTEM_MODULE),
+      ),
+      array(
+        'name'        => lang('Appearance'),
+        'description' => lang('Customize Look and Feel of Access'),
         'url'         => assemble_url('admin_settings_general'),
         'icon'        => get_image_url('settings/general.gif', SYSTEM_MODULE),
       ),

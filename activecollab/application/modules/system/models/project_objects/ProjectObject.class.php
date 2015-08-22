@@ -778,7 +778,7 @@
             $context = $this->getNotificationContext();
           } // if
           
-          return ApplicationMailer::send($subscribers, $template, $variables, $context);
+          return ApplicationMailer::instance()->send($subscribers, $template, $variables, $context);
         } // if
       } // if
       

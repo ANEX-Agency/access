@@ -161,14 +161,6 @@
     if ($send_email) {
       $mailer =& ApplicationMailer::mailer();
       
-      $recipient = new Swift_Address();
-      $recipient->setAddress(ADMIN_EMAIL);
-      $recipient->setName('activeCollab admin');
-      
-      $sender = new Swift_Address();
-      $sender->setAddress(ConfigOptions::getValue('notifications_from_email'));
-      $sender->setName(ConfigOptions::getValue('notifications_from_name'));
-      
       $tmp_message = "Automatic backup of activeCollab on ".ROOT_URL." failed.\n\r";
       $tmp_message.= "Backup returned these errors: \n\r\n\r";
       $tmp_message.= $log_message;
@@ -177,7 +169,9 @@
       $message->setSubject('activeCollab automatic backup error log');
       $message->setData($tmp_message);
       $message->setContentType('text/plain');
-      $mailer->send($message, $recipient, $sender);
+      $message->setFrom(array(ConfigOptions::getValue('notifications_from_email') => ConfigOptions::getValue('notifications_from_name')));
+      $message->setTo(array(ADMIN_EMAIL => 'activeCollab admin'));
+      $mailer->send($message);
     } // if
     
     log_message($log_message, LOG_LEVEL_ERROR, 'backup');

@@ -19,19 +19,25 @@
             </div>
         {/foreach}
         
-        <a class="btn btn-secondary" href="#">Add another field</a>
+        <div class="wrap wrap-fields">
+            <input type="text" name="project[links][new0][name]" placeholder="Link Name" value="" />
+            <input type="text" name="project[links][new0][url]" placeholder="Link URL" value="" />
+        </div>
+        <div class="wrap wrap-fields">
+            <input type="text" name="project[links][new1][name]" placeholder="Link Name" value="" />
+            <input type="text" name="project[links][new1][url]" placeholder="Link URL" value="" />
+        </div>
+        <div class="wrap wrap-fields">
+            <input type="text" name="project[links][new2][name]" placeholder="Link Name" value="" />
+            <input type="text" name="project[links][new2][url]" placeholder="Link URL" value="" />
+        </div>
+        <div class="wrap wrap-fields">
+            <input type="text" name="project[links][new3][name]" placeholder="Link Name" value="" />
+            <input type="text" name="project[links][new3][url]" placeholder="Link URL" value="" />
+        </div>
+        
+        <a class="btn btn-secondary" href="#">Add another link</a>
 
-        <!--<input type="text" name="project[links][new0][name]" placeholder="Link Name" value="" />
-        <input type="text" name="project[links][new0][url]" placeholder="Link URL" value="" />
-
-        <input type="text" name="project[links][new1][name]" placeholder="Link Name" value="" />
-        <input type="text" name="project[links][new1][url]" placeholder="Link URL" value="" />
-
-        <input type="text" name="project[links][new2][name]" placeholder="Link Name" value="" />
-        <input type="text" name="project[links][new2][url]" placeholder="Link URL" value="" />
-
-        <input type="text" name="project[links][new3][name]" placeholder="Link Name" value="" />
-        <input type="text" name="project[links][new3][url]" placeholder="Link URL" value="" />-->
     {/wrap}
     
 {if $logged_user->canSeePrivate()}

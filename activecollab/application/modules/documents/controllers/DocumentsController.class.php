@@ -156,7 +156,7 @@
 						$owner_company = get_owner_company();
 						
 						if(is_foreachable($notify_users)) {
-								ApplicationMailer::send($notify_users, 'documents/new_text_document', array(
+								ApplicationMailer::instance()->send($notify_users, 'documents/new_text_document', array(
 									'document_name' => $this->active_document->getName(),
 									'created_by_name' => $this->active_document->getCreatedByName(),
 									'created_by_url' => $this->logged_user->getViewUrl(),
@@ -227,7 +227,7 @@
 						$owner_company = get_owner_company();
 						
 						if(is_foreachable($notify_users)) {
-								ApplicationMailer::send($notify_users, 'documents/new_upload_file_document', array(
+								ApplicationMailer::instance()->send($notify_users, 'documents/new_upload_file_document', array(
 									'document_name' => $this->active_document->getName(),
 									'created_by_name' => $this->active_document->getCreatedByName(),
 									'created_by_url' => $this->logged_user->getViewUrl(),

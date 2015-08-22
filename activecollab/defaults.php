@@ -138,7 +138,7 @@
   define('NUMBER_FORMAT_THOUSANDS_SEPARATOR', '');
   
   // Cache
-  define('USE_CACHE', true);
+  //define('USE_CACHE', true);
   define('CACHE_BACKEND', 'FileCacheBackend');
   define('CACHE_LIFETIME', 7200);
   

@@ -121,7 +121,7 @@
       } // foreach
   	  
       if(is_foreachable($all_users)) {
-    	  ApplicationMailer::send($all_users, 'resources/task_reassigned', array(
+    	  ApplicationMailer::instance()->send($all_users, 'resources/task_reassigned', array(
           'owner_company_name' => $owner_company->getName(),
           'project_name'       => $project->getName(),
           'project_url'        => $project->getOverviewUrl(),

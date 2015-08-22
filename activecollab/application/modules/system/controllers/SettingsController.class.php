@@ -70,6 +70,53 @@
     	} // if
     } // general
     
+    function appearance() {
+		
+      $appearance_data = $this->request->post('appearance');
+//    	if(!is_array($general_data)) {
+//    		$configs = ConfigOptions::findbyNames(array('theme', 'default_assignments_filter', 'project_templates_group', 'show_welcome_message', 'projects_use_client_icons', 'on_logout_url'));
+//    		
+//    		$general_data = array(
+//    		  'theme' => $configs['theme']->getValue(),
+//    		  'default_assignments_filter' => $configs['default_assignments_filter']->getValue(),
+//    		  'project_templates_group' => $configs['project_templates_group']->getValue(),
+//    		  'show_welcome_message' => $configs['show_welcome_message']->getValue(),
+//    		  'projects_use_client_icons' => $configs['projects_use_client_icons']->getValue(),
+//    		  'on_logout_url' => $configs['on_logout_url']->getValue(),
+//    		);
+//    		
+//    		$general_data['use_on_logout_url'] = $general_data['on_logout_url'] && is_valid_url($general_data['on_logout_url']);
+//    	} // if
+//    	$this->smarty->assign('general_data', $general_data);
+//    	
+//    	if($this->request->isSubmitted()) {
+//    		ConfigOptions::setValue('theme', $general_data['theme']);
+//    		UserConfigOptions::deleteByOption('theme'); // reset
+//    		
+//    		ConfigOptions::setValue('default_assignments_filter', (integer) $general_data['default_assignments_filter']);
+//    		ConfigOptions::setValue('project_templates_group', $general_data['project_templates_group']);
+//    		ConfigOptions::setValue('show_welcome_message', (boolean) $general_data['show_welcome_message']);
+//    		ConfigOptions::setValue('projects_use_client_icons', (boolean) $general_data['projects_use_client_icons']);
+//    		
+//    		if($this->request->post('use_on_logout_url')) {
+//    		  $logout_url = trim($general_data['on_logout_url']);
+//    		  if($logout_url && is_valid_url($logout_url)) {
+//    		    ConfigOptions::setValue('on_logout_url', $logout_url);
+//    		  } else {
+//    		    ConfigOptions::setValue('on_logout_url', '');
+//    		  } // if
+//    		} else {
+//    		  ConfigOptions::setValue('on_logout_url', '');
+//    		} // if
+//    		
+//    		cache_remove('project_icons');
+//    		cache_remove_by_pattern('user_config_options_*');
+//    		
+//    		flash_success('General settings updated');
+//    	  $this->redirectTo('admin');
+//    	} // if
+    } // general
+    
     /**
      * Show date and time configuration panel
      *
@@ -234,48 +281,41 @@
     	} // if
     	
     	// Include files before we start using constants
-    	require_once ANGIE_PATH . '/classes/swiftmailer/init.php';
-      require_once SWIFTMAILER_LIB_PATH . '/Swift/Connection/SMTP.php';
+    	require_once ANGIE_PATH . '/classes/swiftmailer/swift_required.php';
     	  	
     	$mailing_host = array_var($mailing_data,'mailing_smtp_host', null);
     	$mailing_port = array_var($mailing_data,'mailing_smtp_port', null);
-      switch(array_var($mailing_data,'mailing_smtp_security', null)) {
-        case 'tsl':
-          $mailing_encryption = SWIFT_SMTP_ENC_TLS;
-          break;
-        case 'ssl':
-          $mailing_encryption = SWIFT_SMTP_ENC_SSL;
-          break;
-        default:
-          $mailing_encryption = SWIFT_SMTP_ENC_OFF;
-      } // switch
+      $mailing_enc  = array_var($mailing_data,'mailing_smtp_security', null);
       $mailing_username = array_var($mailing_data,'mailing_smtp_username', null);
       $mailing_password = array_var($mailing_data,'mailing_smtp_password', null);
+
+      if($mailing_enc == 'off')
+        $mailing_enc = false;
       
       $message = '';
       $is_success = false;
       $exception = null;
-      Swift_Errors::expect($exception, "Swift_ConnectionException");
-    	$smtp = new Swift_Connection_SMTP($mailing_host, $mailing_port, $mailing_encryption);
-    	$smtp->setTimeout(15);
-      if (array_var($mailing_data,'mailing_smtp_authenticate', null)) {
-        $smtp->setUsername($mailing_username);
-        $smtp->setPassword($mailing_password);
-      } // if
-      $swift = new Swift($smtp);
-      $swift->connect();
 
-      if ($exception !== null) {
-        if (instance_of($exception, 'Swift_ConnectionException')) {
-          $message = $exception->getMessage(); 
-        } else {
-          $message = lang('Unknown Error');
-        } // if
-      } else {
+      $transport = Swift_SmtpTransport::newInstance($mailing_host, $mailing_port, $mailing_enc);
+      $transport->setTimeout(15);
+
+      if (array_var($mailing_data,'mailing_smtp_authenticate', null))
+        $transport->setUsername($mailing_username)->setPassword($mailing_password);
+
+      try {
+        $transport->start();
+      }
+      catch(Exception $e) {
+        $exception = $e;
+      }
+
+      if($exception) {
+        $message = $exception->getMessage();
+      }
+      else {
         $is_success = true;
         $message = lang('Connection has been established, all parameters are valid');
-        Swift_Errors::clear("Swift_ConnectionException");
-      } // if
+      }
       
       $this->serveData(array(
         'message' => $message,

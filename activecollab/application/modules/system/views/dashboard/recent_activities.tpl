@@ -11,7 +11,7 @@
     {foreach from=$activities item=activity name=activities}
     {assign var=activity_object value=$activity->getObject()}
     <div class="{cycle values=''} activity {$activity_object->getType()|lower}_activity {$activity->getType()|lower}_activity">
-      <div class="log_icon"><img src="{$activity->getIconUrl()}" alt="" /></div>
+      <div class="log_icon"><!--<img src="{$activity->getIconUrl()}" alt="" />--></div>
       <div class="log_time"><span>{object_star object=$activity_object user=$logged_user}</span> &middot; {project_link project=$activity_object->getProject()} &middot; <strong>{$activity->getCreatedOn()|time}</strong></div>
       <div class="log_info">
         <div class="log_info_head">{$activity->renderHead($activity_object, true)}</div>

@@ -93,7 +93,10 @@
     	  $mailer =& ApplicationMailer::mailer();
     	  
     	  $email_message = new Swift_Message($subject, $message, 'text/html', EMAIL_ENCODING, EMAIL_CHARSET);
-    	  if($mailer->send($email_message, new Swift_Address($recipient_email, $recipient_name), $this->logged_user->getEmail())) {
+          $email_message->setFrom(array($this->logged_user->getEmail()));
+          $email_message->setTo(array($recipient_email => $recipient_name));
+
+    	  if($mailer->send($email_message)) {
     	  	flash_success('Test email has been sent, check your inbox');
     	  } else {
     	    flash_error('Failed to send out test email');

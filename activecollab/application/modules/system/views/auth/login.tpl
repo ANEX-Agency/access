@@ -1,34 +1,41 @@
 {title}Login{/title}
-<div id="login_company_logo">
-  <img src="{brand what=logo}" alt="{$owner_company->getName()|clean} logo" />
+
+<div id="login-form" class="box box-form">
+
+    <div class="logo">
+    
+        <img src="{brand what=logo}" alt="{$owner_company->getName()|clean} logo" />
+        
+    </div>
+
+    <div class="form">
+    
+        {form method=post autofocus=$auto_focus show_errors=no}
+        	
+            <div class="field-wrap">
+                <input type="text" name="login[email]" value="{$login_data.email}" id="" class="" tabindex="1" placeholder="E-Mail" />
+            </div>
+            
+            <div class="field-wrap">
+                <input type="password" name="login[password]" value="{$login_data.password}" id="" class="" tabindex="2" placeholder="Password" />
+            </div>
+            
+            <div class="field-wrap">
+                <input type="checkbox" name="login[remember]" checked="$login_data.remember" id="remember" tabindex="3" /> 
+                <label for="remember">{lang}Remember me for 14 days{/lang}</label>
+            </div>
+            
+            <div class="field-wrap">
+                <input type="submit" tabindex="4" accesskey="s" class="btn" value="Login" />
+            </div>
+            
+            <div class="field-wrap">
+            	{link href="?route=forgot_password" class=forgot_password_link}Forgot password?{/link}
+            </div>
+            
+        {/form}
+        
+    </div>
+
 </div>
 
-<div id="auth_dialog_container">
-  <div id="auth_dialog_container_inner">
-    <div id="auth_dialog">
-    {form method=post autofocus=$auto_focus show_errors=no}
-      {wrap field=login class="auth_elements"}
-        {wrap field=email}
-          {label for=loginFormEmail}Email Address{/label}
-          {text_field name='login[email]' value=$login_data.email id=loginFormEmail tabindex=1}
-        {/wrap}
-        
-        {wrap field=password}
-          {label for=loginFormPassword}Password{/label}
-          {password_field name='login[password]' value=$login_data.password id=loginFormPassword tabindex=2}
-        {/wrap}
-        
-        {wrap field=remember_me}
-          <label for="loginFormRemember">{checkbox_field name=login[remember] checked=$login_data.remember class=inlineInput id=loginFormRemember tabindex=3} {lang}Remember me for 14 days{/lang}</label>
-        {/wrap}
-      {/wrap}
-      
-      {wrap_buttons}
-        {link href="?route=forgot_password" class=forgot_password_link}Forgot password?{/link}
-        {submit tabindex=4}Login{/submit}
-      {/wrap_buttons}
-      <div class="clear"></div>
-    {/form}
-    </div>
-  </div>
-</div>

@@ -171,7 +171,7 @@
       	      UserConfigOptions::setValue('welcome_message', $welcome_message, $this->active_user);
       	    } // if
       	    
-      	    $welcome_message_sent = ApplicationMailer::send(array($this->active_user), 'system/new_user', array(
+      	    $welcome_message_sent = ApplicationMailer::instance()->send(array($this->active_user), 'system/new_user', array(
               'created_by_id'   => $this->logged_user->getId(),
               'created_by_name' => $this->logged_user->getDisplayName(),
               'created_by_url'  => $this->logged_user->getViewUrl(),
@@ -904,7 +904,7 @@
         
         $save = $this->active_user->save();
         if($save && !is_error($save)) {
-          $welcome_message_sent = ApplicationMailer::send(array($this->active_user), 'system/new_user', array(
+          $welcome_message_sent = ApplicationMailer::instance()->send(array($this->active_user), 'system/new_user', array(
             'created_by_id'   => $this->logged_user->getId(),
             'created_by_name' => $this->logged_user->getDisplayName(),
             'created_by_url'  => $this->logged_user->getViewUrl(),

@@ -147,7 +147,7 @@
     	      $save = $reminder->save();
     	      if($save && !is_error($save)) {
     	        $reminders_sent[] = $user->getDisplayName();
-    	        ApplicationMailer::send($user, 'system/reminder', array(
+    	        ApplicationMailer::instance()->send($user, 'system/reminder', array(
         	      'reminded_by_name'  => $this->logged_user->getDisplayName(),
         	      'reminded_by_url'   => $this->logged_user->getViewUrl(),
         	      'object_name'       => $parent->getName(),

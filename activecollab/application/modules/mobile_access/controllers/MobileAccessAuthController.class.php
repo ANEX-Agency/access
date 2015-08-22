@@ -192,7 +192,7 @@
           $this->render();
         } // if
         
-        $sent = ApplicationMailer::send(array($user), 'system/forgot_password', array(
+        $sent = ApplicationMailer::instance()->send(array($user), 'system/forgot_password', array(
           'reset_url' => $user->getResetPasswordUrl(),
         ));
         

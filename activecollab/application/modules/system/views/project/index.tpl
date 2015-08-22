@@ -101,7 +101,8 @@
             <h2>{$active_project->getName()|clean}</h2>
           
             <div class="project-header">
-            
+            	
+                {if $active_project->getFormattedOverview()}
                 <div class="project-header-left">
                 
                     <h3>Beschreibung:</h3>
@@ -111,7 +112,7 @@
                     </div>
                     
                 </div>
-                
+                {/if}
                 <div class="project-header-right">
                 
                     <h3>Details:</h3>

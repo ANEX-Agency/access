@@ -116,16 +116,28 @@ $(document).ready(function() {
   } // update_status_menu_badge_item
   setInterval(update_status_menu_badge_item, 60000 * 3); 
   
-  // init menu item button
-  $('#menu_item_status a').click(function() {
-    var status_update_url = App.extendUrl($(this).attr('href'), { 
-      async : 1 
-    });
+	// init menu item button
+	$('#menu_item_status a').click(function(e) {
+	  
+//		e.preventDefault();
+//	  
+//		var inst = $('[data-remodal-id=modal]').remodal();
+//		
+//		/**
+//		 * Opens the modal window
+//		 */
+//		inst.open();
+	  
+		var status_update_url = App.extendUrl($(this).attr('href'), { 
+			async : 1 
+		});
     
-    App.ModalDialog.show('status_updates', App.lang('Status Updates'), $('<p><img src="' + App.data.assets_url + '/images/indicator.gif" alt="" /> ' + App.lang('Loading...') + '</p>').load(status_update_url), {
-      buttons : false
-    });
-    App.MainMenu.setItemBadgeValue('status', 'main', 0);
-    return false;
-  });
+		App.ModalDialog.show('status_updates', App.lang('Status Updates'), $('<p><img src="' + App.data.assets_url + '/images/indicator.gif" alt="" /> ' + App.lang('Loading...') + '</p>').load(status_update_url), {
+			buttons : false
+		});
+		
+		App.MainMenu.setItemBadgeValue('status', 'main', 0);
+		return false;
+		
+	});
 })

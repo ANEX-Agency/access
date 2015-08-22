@@ -634,7 +634,7 @@
               require_once(INVOICING_MODULE_PATH.'/models/InvoicePdf.class.php');
               InvoicePDF::save($this->active_invoice, $filename);
               
-              ApplicationMailer::send($issue_to, 'invoicing/issue', array(
+              ApplicationMailer::instance()->send($issue_to, 'invoicing/issue', array(
                 'issued_by_name' => $this->logged_user->getDisplayName(),
                 'issued_by_url'  => $this->logged_user->getViewUrl(),
                 'invoice_number' => $this->active_invoice->getNumber(), 
@@ -701,7 +701,7 @@
             require_once(INVOICING_MODULE_PATH.'/models/InvoicePdf.class.php');
             InvoicePDF::save($this->active_invoice, $filename);
             
-            ApplicationMailer::send($issue_to, 'invoicing/issue', array(
+            ApplicationMailer::instance()->send($issue_to, 'invoicing/issue', array(
               'issued_by_name' => $this->logged_user->getDisplayName(),
               'issued_by_url'  => $this->logged_user->getViewUrl(),
               'invoice_number' => $this->active_invoice->getNumber(), 
@@ -752,7 +752,7 @@
               $notify_users[] = $this->logged_user;
             } // if
 
-            ApplicationMailer::send($notify_users, 'invoicing/cancel', array(
+            ApplicationMailer::instance()->send($notify_users, 'invoicing/cancel', array(
               'closed_by_name' => $this->logged_user->getDisplayName(),
               'closed_by_url'  => $this->logged_user->getViewUrl(),
               'invoice_number' => $this->active_invoice->getNumber(), 
