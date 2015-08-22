@@ -658,7 +658,7 @@ App.widgets.DashboardSections = function() {
    * @var jQuery
    */
   var section_content_wrapper;
-  
+
   // Public interface
   return {
     
@@ -668,13 +668,15 @@ App.widgets.DashboardSections = function() {
      * @param String wrapper_id
      */
     init : function(wrapper_id) {
+
       wrapper = $('#' + wrapper_id);
+
       section_content_wrapper = wrapper.find('div.top_tabs_object_list .dashboard_wide_sidebar_inner_2');
       
       wrapper.find('ul.dashboard_tabs a').click(function(e) {
         var link = $(this);
         var list_item = link.parent();
-        
+
         if(list_item.is('li.selected')) {
           return false;
         } // if
@@ -884,9 +886,13 @@ App.widgets.DashboardImportantItems = function() {
     init : function(wrapper_id) {
       wrapper = $('#' + wrapper_id);
       
-      
+      if(wrapper.data('_initialized'))
+          return;
+
+      wrapper.data('_initialized', true);
+
       // Show and initialize reminders      
-      wrapper.find('li.reminders a').click(function () {
+      wrapper.find('li.reminders a').click(function (e) {
         var anchor = $(this);
         var popup_url = App.extendUrl(anchor.attr('href'), {async : 1, skip_layout : 1});
         App.ModalDialog.show('reminders_popup', App.lang('Active Reminders'), $('<p><img src="' + App.data.indicator_url + '" alt="" /> ' + App.lang('Loading...') + '</p>').load(popup_url), { 

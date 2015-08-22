@@ -69,53 +69,48 @@
     	  $this->redirectTo('admin');
     	} // if
     } // general
-    
+	
+    /**
+     * Appearance settings
+     *
+     * @param void
+     * @return null
+     */
     function appearance() {
 		
-      $appearance_data = $this->request->post('appearance');
-//    	if(!is_array($general_data)) {
-//    		$configs = ConfigOptions::findbyNames(array('theme', 'default_assignments_filter', 'project_templates_group', 'show_welcome_message', 'projects_use_client_icons', 'on_logout_url'));
-//    		
-//    		$general_data = array(
-//    		  'theme' => $configs['theme']->getValue(),
-//    		  'default_assignments_filter' => $configs['default_assignments_filter']->getValue(),
-//    		  'project_templates_group' => $configs['project_templates_group']->getValue(),
-//    		  'show_welcome_message' => $configs['show_welcome_message']->getValue(),
-//    		  'projects_use_client_icons' => $configs['projects_use_client_icons']->getValue(),
-//    		  'on_logout_url' => $configs['on_logout_url']->getValue(),
-//    		);
-//    		
-//    		$general_data['use_on_logout_url'] = $general_data['on_logout_url'] && is_valid_url($general_data['on_logout_url']);
-//    	} // if
-//    	$this->smarty->assign('general_data', $general_data);
-//    	
-//    	if($this->request->isSubmitted()) {
-//    		ConfigOptions::setValue('theme', $general_data['theme']);
-//    		UserConfigOptions::deleteByOption('theme'); // reset
-//    		
-//    		ConfigOptions::setValue('default_assignments_filter', (integer) $general_data['default_assignments_filter']);
-//    		ConfigOptions::setValue('project_templates_group', $general_data['project_templates_group']);
-//    		ConfigOptions::setValue('show_welcome_message', (boolean) $general_data['show_welcome_message']);
-//    		ConfigOptions::setValue('projects_use_client_icons', (boolean) $general_data['projects_use_client_icons']);
-//    		
-//    		if($this->request->post('use_on_logout_url')) {
-//    		  $logout_url = trim($general_data['on_logout_url']);
-//    		  if($logout_url && is_valid_url($logout_url)) {
-//    		    ConfigOptions::setValue('on_logout_url', $logout_url);
-//    		  } else {
-//    		    ConfigOptions::setValue('on_logout_url', '');
-//    		  } // if
-//    		} else {
-//    		  ConfigOptions::setValue('on_logout_url', '');
-//    		} // if
-//    		
-//    		cache_remove('project_icons');
-//    		cache_remove_by_pattern('user_config_options_*');
-//    		
-//    		flash_success('General settings updated');
-//    	  $this->redirectTo('admin');
-//    	} // if
-    } // general
+		$appearance_data = $this->request->post( 'appearance' );
+	  
+		if( !is_array( $appearance_data ) ) {
+		
+		$configs = ConfigOptions::findbyNames( array( 'logo', 'icon', 'background', 'primary_color', 'secondary_color' ) );
+		
+		$appearance_data = array(
+			'logo'				=> $configs['logo']->getValue(),
+			'icon'				=> $configs['icon']->getValue(),
+			'background'		=> $configs['background']->getValue(),
+			'primary_color'		=> $configs['primary_color']->getValue(),
+			'seconary_color'	=> $configs['secondary_color']->getValue()
+		);
+		
+		} // if
+		
+		$this->smarty->assign('appearance_data', $appearance_data);
+		
+		if($this->request->isSubmitted()) {
+		
+			ConfigOptions::setValue('logo', $appearance_data['logo']);
+			ConfigOptions::setValue('icon', $appearance_data['icon']);
+			ConfigOptions::setValue('background', $appearance_data['background']);
+			ConfigOptions::setValue('primary_color', $appearance_data['primary_color']);
+			ConfigOptions::setValue('secondary_color', $appearance_data['secondary_color']);
+			
+			flash_success('Appearance settings updated');
+			
+			$this->redirectTo('admin');
+		
+		} // if
+		
+    } // appearance
     
     /**
      * Show date and time configuration panel

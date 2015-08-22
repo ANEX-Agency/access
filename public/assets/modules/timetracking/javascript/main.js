@@ -14,11 +14,12 @@ App.timetracking.controllers.timetracking = {
   index : function() {
     $(document).ready(function() {      
       // mass edit functionality
+console.log("peng");
       var mass_edit = $('#mass_edit');
       mass_edit.enable = function () {
-        mass_edit.find('select').attr('disabled','');
+        mass_edit.find('select').attr('disabled',false);
         if ((mass_edit.find('select').val() != '') && (form.find('.time_record input:checked').length > 0)) {
-          mass_edit.find('button').attr('disabled','');
+          mass_edit.find('button').attr('disabled',false);
         } else {
           mass_edit.find('button').attr('disabled','disabled');  
         } // if

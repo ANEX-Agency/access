@@ -82,9 +82,7 @@
     	  } // if
     	  
     	  if($errors->hasErrors()) {
-    	    if(instance_of($mailer, 'Swift')) {
-    	      $mailer->disconnect();
-    	    } // if
+    	    $mailer->disconnect();
     	    
     	    $this->smarty->assign('errors', $errors);
     	    $this->render();

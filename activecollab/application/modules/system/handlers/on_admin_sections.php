@@ -14,49 +14,58 @@
    * @return null
    */
   function system_handle_on_admin_sections(&$sections) {
+	  
     $sections[ADMIN_SECTION_SYSTEM][SYSTEM_MODULE] = array(
-      array(
-        'name'        => lang('General'),
-        'description' => lang('General Access settings'),
-        'url'         => assemble_url('admin_settings_general'),
-        'icon'        => get_image_url('settings/general.gif', SYSTEM_MODULE),
-      ),
-      array(
-        'name'        => lang('Appearance'),
-        'description' => lang('Customize Look and Feel of Access'),
-        'url'         => assemble_url('admin_settings_general'),
-        'icon'        => get_image_url('settings/general.gif', SYSTEM_MODULE),
-      ),
-      array(
-        'name'        => lang('Modules'),
-        'description' => lang('Module administration tool. You can use it to install/uninstall modules, configure them and so on'),
-        'url'         => assemble_url('admin_modules'),
-        'icon'        => get_image_url('admin/modules.gif'),
-      ),
-      array(
-        'name'        => lang('Roles'),
-        'description' => lang('Roles administration tool. Use it to configure system level permissions for users of the system'),
-        'url'         => assemble_url('admin_roles'),
-        'icon'        => get_image_url('admin/roles.gif'),
-      ),
-      array(
-        'name'        => lang('Date and Time'),
-        'description' => lang('Set system timezone, daylight saving time, first day of the week etc'),
-        'url'         => assemble_url('admin_settings_date_time'),
-        'icon'        => get_image_url('settings/date_time.gif', SYSTEM_MODULE),
-      ),
-      array(
-        'name'        => lang('Master Categories'),
-        'description' => lang('Manage default categories that are added when new project is created'),
-        'url'         => assemble_url('admin_settings_categories'),
-        'icon'        => get_image_url('settings/categories.gif', SYSTEM_MODULE),
-      ),
-      array(
-        'name'        => lang('Maintenance Mode'),
-        'description' => lang('Put system in maintenance mode'),
-        'url'         => assemble_url('admin_settings_maintenance'),
-        'icon'        => get_image_url('admin/maintenance.gif'),
-      ),
+      
+		array(
+			'name'        => lang( 'General' ),
+			'description' => lang( 'General Access settings' ),
+			'url'         => assemble_url( 'admin_settings_general' ),
+			'icon'        => get_image_url( 'settings/general.gif', SYSTEM_MODULE )
+		),
+		
+		array(
+			'name'        => lang( 'Appearance' ),
+			'description' => lang( 'Customize Look and Feel of Access' ),
+			'url'         => assemble_url( 'admin_settings_appearance' ),
+			'icon'        => get_image_url( 'settings/general.gif', SYSTEM_MODULE )
+		),
+		
+		array(
+			'name'        => lang( 'Modules' ),
+			'description' => lang( 'Module administration tool. You can use it to install/uninstall modules, configure them and so on' ),
+			'url'         => assemble_url( 'admin_modules' ),
+			'icon'        => get_image_url( 'admin/modules.gif' )
+		),
+		
+		array(
+			'name'        => lang( 'Roles' ),
+			'description' => lang( 'Roles administration tool. Use it to configure system level permissions for users of the system' ),
+			'url'         => assemble_url( 'admin_roles' ),
+			'icon'        => get_image_url( 'admin/roles.gif' )
+		),
+		
+		array(
+			'name'        => lang( 'Date and Time' ),
+			'description' => lang( 'Set system timezone, daylight saving time, first day of the week etc' ),
+			'url'         => assemble_url( 'admin_settings_date_time' ),
+			'icon'        => get_image_url( 'settings/date_time.gif', SYSTEM_MODULE )
+		),
+		
+		array(
+			'name'        => lang( 'Master Categories' ),
+			'description' => lang( 'Manage default categories that are added when new project is created' ),
+			'url'         => assemble_url( 'admin_settings_categories' ),
+			'icon'        => get_image_url( 'settings/categories.gif', SYSTEM_MODULE )
+		),
+		
+		array(
+			'name'        => lang( 'Maintenance Mode' ),
+			'description' => lang( 'Put system in maintenance mode' ),
+			'url'         => assemble_url( 'admin_settings_maintenance' ),
+			'icon'        => get_image_url( 'admin/maintenance.gif' )
+		)
+	  
     );
     
     if(LOCALIZATION_ENABLED) {

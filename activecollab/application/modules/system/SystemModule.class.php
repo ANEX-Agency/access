@@ -187,6 +187,7 @@
       // Settings
       $router->map('admin_settings', 'admin', array('controller' => 'admin', 'action' => 'index'));
       $router->map('admin_settings_general', 'admin/settings/general', array('controller' => 'settings', 'action' => 'general'));
+      $router->map('admin_settings_appearance', 'admin/settings/appearance', array('controller' => 'settings', 'action' => 'appearance'));
       $router->map('admin_settings_mailing', 'admin/settings/mailing', array('controller' => 'settings', 'action' => 'mailing'));
       $router->map('admin_settings_mailing_test_connection', 'admin/settings/mailing/test_connection', array('controller' => 'settings', 'action' => 'mailing_test_connection'));
       $router->map('admin_settings_date_time', 'admin/settings/date-time', array('controller' => 'settings', 'action' => 'date_time'));

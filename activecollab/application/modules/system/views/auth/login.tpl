@@ -30,7 +30,7 @@
             </div>
             
             <div class="field-wrap">
-            	{link href="?route=forgot_password" class=forgot_password_link}Forgot password?{/link}
+            	{link href="?route=forgot_password"}Forgot password?{/link}
             </div>
             
         {/form}

@@ -11,15 +11,17 @@
     <div class="form">
     
         {form method=post autofocus=$auto_focus show_errors=no}
-        
-            <p>{lang name=$user->getDisplayName()}Use the form below to reset password for :name's account{/lang}:</p>
+        	
+            <div class="description">
+                <p>{lang name=$user->getDisplayName()}Use the form below to reset password for: <br /> :name{/lang}</p>
+            </div>
             
             <div class="field-wrap">
-                <input type="text" name="reset[password]" value="{$reset_data.password}" id="" class="" tabindex="1" placeholder="Password" />
+                <input type="password" name="reset[password]" value="{$reset_data.password}" id="" class="" tabindex="1" placeholder="Password" />
             </div>
                         
             <div class="field-wrap">
-                <input type="text" name="reset[password_a]" value="{$reset_data.password_a}" id="" class="" tabindex="2" placeholder="Password Repeat" />
+                <input type="password" name="reset[password_a]" value="{$reset_data.password_a}" id="" class="" tabindex="2" placeholder="Password Repeat" />
             </div>
                         
             {if !$success_message}
@@ -28,13 +30,15 @@
                 </div>
             {/if}
             
-            <div class="field-wrap">
-                {link href='?route=login' class=forgot_password_link}Back to Login Form{/link}
-            </div>
-            
             {if $success_message}
-                <p>{$success_message|clean}</p>
+            	<div class="message">
+                    <p>{$success_message|clean}</p>
+                </div>
             {/if}
+            
+            <div class="field-wrap">
+                {link href='?route=login'}Back to Login Form{/link}
+            </div>
             
         {/form}
         

@@ -13,7 +13,9 @@
         {form method=post autofocus=$auto_focus show_errors=no action="?route=forgot_password"}
             
             {if $success_message}
-                <p>{$success_message|clean}</p>
+                <div class="message">
+                	<p>{$success_message|clean}</p>
+                </div>
             {/if}
             
 			{if !$success_message}
