@@ -1,0 +1,57 @@
+/*
+ * ==================================================
+ * Pagination
+ * ==================================================
+ */
+
+.pagination {
+    margin: 20px 0;
+    padding: 20px 0 0 0;
+    border-top: 1px solid #EEE;
+}
+
+/*
+.pagination {
+    float: right;
+    margin: 20px 0;
+}
+
+.pagination ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    border: 1px solid #CCC;
+}
+
+.pagination ul li {
+    float: left;
+}
+
+.pagination ul li a,
+.pagination ul li span {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    display: inline-block;
+    line-height: 22px;
+    text-align: center;
+    border-right: 1px solid #CCC;
+    
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+.pagination ul li .current {
+    background: #EEE;
+}
+
+.pagination ul li a:hover {
+    background: #EEE;
+}
+
+.pagination ul li:last-child a,
+.pagination ul li:last-child span {
+    border: none;
+}

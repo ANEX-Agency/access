@@ -1,0 +1,215 @@
+/*
+ * ==================================================
+ * COMPONENT: FORMS
+ * ==================================================
+ */
+
+.uk-form input[type=radio] {
+    margin: -2px 5px 0 0;
+}
+
+input,
+textarea,
+select {
+    width: auto;
+}
+
+textarea {
+    width: 100%;
+}
+
+select {
+    padding: 5px 5px 5px 3px;
+    background: #fafafa;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance: none;
+    cursor: pointer;
+    position: relative;
+}
+
+select {
+	padding-right:18px
+}
+
+
+
+
+/**
+ * FORM > RADIO INPUT > CUSTOM PERMISSIONS
+ */
+
+.user-project-permissions {}
+
+.user-project-permissions .custom-permissions {
+    margin: 20px 0 0 0;
+}
+
+.user-project-permissions .custom-permissions table td {
+    width: 20%;
+    vertical-align: middle;
+}
+
+.user-project-permissions .custom-permissions table td h4 {
+	margin: 0;
+}
+
+.user-project-permissions input[type=radio] {
+    display: none;
+}
+
+.user-project-permissions ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.user-project-permissions ul li {
+    margin: 0 10px 0 0;
+    display: inline-block;
+}
+
+
+.user-project-permissions input[type=radio] + label {
+    padding: 15px 25px !important;
+    display: block;
+    line-height: normal;
+    letter-spacing: .1em;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid rgba( 200, 200, 200, .1 );
+    
+    opacity: .5;
+    
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+.user-project-permissions input[type=radio]:checked + label {
+    opacity: 1;
+    border: 1px solid rgba( 200, 200, 200, 1 );
+    background: rgba( 255, 255, 255, 1 );
+}
+
+.user-project-permissions input[type=radio] + label:hover {
+    opacity: .7;
+    border: 1px solid rgba( 200, 200, 200, 1 );
+    background: rgba( 255, 255, 255, 1 );
+}
+
+.user-project-permissions .no-access input[type=radio]:checked + label {
+    color: #C00;
+}
+
+.user-project-permissions .has-access input[type=radio]:checked + label {
+    color: rgb(51,204,102);
+}
+
+.user-project-permissions .permission-value input[type=radio] + label {
+    font-size: 1.6em;
+}
+
+
+
+
+.user-project-permissions .custom-permissions input[type=radio] + label {
+    min-width: 50px;
+    padding: 10px !important;
+    display: inline-block;
+    line-height: normal;
+    letter-spacing: normal;
+     
+    -webkit-border-radius: 50px;
+       -moz-border-radius: 50px;
+            border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+input[type=radio] + label {
+    padding: 15px 25px !important;
+    display: block;
+    line-height: normal;
+    letter-spacing: .1em;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid rgba( 200, 200, 200, .1 );
+    
+    opacity: .5;
+    
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+input[type=radio]:checked + label {
+    opacity: 1;
+    border: 1px solid rgba( 200, 200, 200, 1 );
+    background: rgba( 255, 255, 255, 1 );
+}
+
+input[type=radio] + label:hover {
+    opacity: .7;
+    border: 1px solid rgba( 200, 200, 200, 1 );
+    background: rgba( 255, 255, 255, 1 );
+}
+
+
+
+
+
+/*input[type="text"] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #DDD !important;
+    padding: 0 10px;
+    
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: 1px solid #333 !important;
+}
+
+
+.wrap-fields {width: 100%; float: left; margin: 0 0 10px 0;}
+.wrap-fields input {width: 49%; float: left;}
+.wrap-fields input:last-child {float: right;}
+
+.big_form .form_left_col input.long,
+.big_form .form_left_col input.title,
+.big_form .form_left_col textarea.long {
+    width: 100%;
+    height: 34px;
+    padding: 0 5px;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.big_form .form_left_col input.long:focus,
+.big_form .form_left_col input.title:focus,
+.big_form .form_left_col textarea.long:focus {
+	outline: none;
+}
+*/
+
+
+.field {
+    margin: 0 0 20px 0;
+}

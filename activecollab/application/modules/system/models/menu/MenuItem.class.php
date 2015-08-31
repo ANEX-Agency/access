@@ -29,11 +29,11 @@
     var $url;
     
     /**
-     * Item icon URL
+     * Item icon
      *
      * @var string
      */
-    var $icon_url;
+    var $icon;
     
     /**
      * Value of menu item badge
@@ -60,35 +60,46 @@
      * 
      * @return MenuItem
      */
-    function __construct($name, $caption, $url, $icon_url, $badge_value = null, $access_key = null) {
+    function __construct($name, $caption, $url, $icon, $badge_value = null, $access_key = null) {
       $this->name = $name;
       $this->caption = $caption;
       $this->url = $url;
-      $this->icon_url = $icon_url;
+      $this->icon = $icon;
       $this->badge_value = $badge_value;
       $this->access_key = $access_key;
     } // __construct
     
-    /**
-     * Render this item
-     *
-     * @param void
-     * @return null
-     */
-    function render() {
-      $rendered = '<a href="' . $this->url . '" class="main"';
-      if ($this->access_key) {
-        $rendered.= ' accesskey="' . $this->access_key . '"';
-      } // if
-      $rendered.='><span class="outer"><span class="inner" style="background-image: url(\'' . $this->icon_url . '\')">';
-      if ($this->badge_value) {
-        $rendered.= '<span class="badge">' . clean($this->badge_value). '</span>';
-      }
-      $rendered.= clean($this->caption) . '</span></span></a>';
-      
-      return $rendered;
-    } // render
+	/**
+	 * Render this item
+	 *
+	 * @param void
+	 * @return null
+	 */
+	function render() {
+	
+		$output = '<a href="' . $this->url . '"';
+		
+		if ( $this->access_key )
+			$output .= ' accesskey="' . $this->access_key . '"';
+		
+		$output .='>';
+		
+		if( $this->icon )
+			$output .='<span class="' . $this->icon . '"></span> ';
+		else
+			$output .='<span class="lnr lnr-screen"></span> ';
+
+		if ($this->badge_value)
+			$output .= '<span class="badge">' . clean($this->badge_value). '</span>';
+		
+			$output .= clean($this->caption);
+			
+		$output .= '</a>';
+		
+		return $output;
+	
+	} // render
   
-  } // MenuItem
+} // MenuItem
 
 ?>

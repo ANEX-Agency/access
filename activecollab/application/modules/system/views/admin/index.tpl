@@ -7,14 +7,27 @@
         {if is_foreachable($section)}
             <div class="admin_section {cycle values='odd,even'}">
                 <h3>{lang}{$section_name}{/lang}</h3>
-                <ul>
+                
+                <div class="uk-grid" data-uk-grid-margin>
+                
+                    {foreach from=$section item=admin_section}
+                        {foreach from=$admin_section item=subsection}
+                            <div class="uk-width-1-2 uk-width-small-1-3 uk-width-medium-1-4 uk-width-large-1-6">
+                                <a href="{$subsection.url}"><img src="{$subsection.icon}" alt="{$subsection.name}" /><span>{$subsection.name}</span></a>
+                            </div>
+                        {/foreach}
+                    {/foreach}
+                    
+                </div>
+                
+                <!--<ul>
                     {foreach from=$section item=admin_section}
                         {foreach from=$admin_section item=subsection}
                             <li><a href="{$subsection.url}"><img src="{$subsection.icon}" alt="{$subsection.name}" /><span>{$subsection.name}</span></a></li>
                         {/foreach}
                     {/foreach}
                 </ul>
-                <div class="clear"></div>
+                <div class="clear"></div>-->
             </div>
         {/if}
     {/foreach}

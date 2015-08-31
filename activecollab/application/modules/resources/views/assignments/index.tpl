@@ -95,11 +95,6 @@
   
   <div id="assignments_list">
   {if is_foreachable($assignments)}
-    {if $pagination && ($pagination->getLastPage() > 1)}
-    <p class="pagination top"><span class="inner_pagination">{lang}Page{/lang}: {pagination pager=$pagination}{$active_filter->getUrl('-PAGE-')}{/pagination}</span></p>
-    {/if}
-    <div class="clear"></div>
-    
     <table class="assignments">
       <tr>
         <th class="star"></th>
@@ -125,10 +120,10 @@
           {object_time object=$assignment show_time=no} 
         {/if}
         {if $assignment->canEdit($logged_user)}
-          {link href=$assignment->getEditUrl() title='Edit...'}<img src='{image_url name=gray-edit.gif}' alt='' />{/link} 
+          {link href=$assignment->getEditUrl() title='Edit...'}<i class="fa fa-pencil-square"></i>{/link} 
         {/if}
         {if $assignment->canDelete($logged_user)}
-          {link href=$assignment->getTrashUrl() title='Move to Trash' class=remove_assignment}<img src='{image_url name=gray-delete.gif}' alt='' />{/link}
+          {link href=$assignment->getTrashUrl() title='Move to Trash' class=remove_assignment}<i class="fa fa-trash-o"></i>{/link}
         {/if}
         </td>
       </tr>
@@ -138,9 +133,15 @@
     <p class="empty_page">{lang}There are no tasks that match selected filter rules{/lang}</p>
   {/if}
   </div>
+ 
+    {if $pagination && ($pagination->getLastPage() > 1)}
+        <div class="pagination">{pagination pager=$pagination}{$active_filter->getUrl('-PAGE-')}{/pagination}</div>
+    {/if}
   
-{if ($pagination->getLastPage() > 1) && !$pagination->isLast()}
+<!--{if ($pagination->getLastPage() > 1) && !$pagination->isLast()}
   <p class="next_page"><a href="{$active_filter->getUrl($pagination->getNextPage())}">{lang}Next Page{/lang}</a></p>
 {/if}
-  <p class="assignments_filter_rss"><a href="{$active_filter->getRssUrl($logged_user)}">{lang}Track using RSS{/lang}</a></p>
+--> 
+
+	<div class="assignments_filter_rss"><a href="{$active_filter->getRssUrl($logged_user)}" class="uk-button button button-primary button-rss"><i class="uk-icon-rss"></i> {lang}Track using RSS{/lang}</a></div>
 </div>

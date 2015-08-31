@@ -1,0 +1,137 @@
+/*
+ * ==================================================
+ * ACTIONS
+ * ==================================================
+ */
+
+.actions ul {
+    float: right;
+    margin: 5px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.actions ul li {
+    float: left;
+    margin: 0 0 0 10px;
+    display: inline;
+    position: relative;
+}
+
+.actions ul li .btn {
+    float: left;
+    padding: 10px 20px;
+    display: block;
+    
+    color: #444;
+    font-size: 1.2em;
+    text-decoration: none;
+    vertical-align: middle;
+    
+    cursor: pointer;
+
+    background: rgb( 235, 235, 235 );
+    
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+.actions .btn:hover {
+    color: #222;
+    background: rgb( 255, 255, 255 );
+}
+
+
+
+
+
+.actions .with_subitems ul {
+    margin: 0;
+    padding: 0;
+
+    display: none;
+    
+    position: absolute;
+    top: 36px;
+    right: 0;
+    z-index: 1000;
+    list-style: none;
+    
+    background: #EEE;
+}
+
+.actions .with_subitems.hover ul {
+    display: block;
+}
+
+.actions .with_subitems ul li {
+    margin: 0;
+}
+
+.actions .with_subitems ul li a {
+    width: 180px;
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    border-left: 1px solid transparent;
+    
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+.actions .with_subitems ul li a:hover {
+    border-color: #C90000;
+    background: #FFF;
+}
+
+
+
+
+
+/*
+.with_page_details .actions {
+  margin-top: 15px !important;
+}
+*/
+
+
+
+/*
+
+
+
+.actions .btn span {
+    height: 16px;
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+
+
+.actions li.first .btn span {
+    padding-left: 13px;
+}
+
+
+.actions li.last .btn {
+    border-right: 1px solid #ccc;
+}
+
+.actions li.last .btn span {
+    padding-right: 13px;
+}
+
+.actions li.last .btn:hover {
+    background-position: right bottom;
+}
+
+.actions li.single .btn {
+    margin-left: 10px;
+    border-right: 1px solid #ccc;
+}
+
+
+
+/*

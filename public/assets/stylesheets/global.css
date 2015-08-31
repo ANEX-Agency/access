@@ -1,6 +1,7 @@
 /*******************************************************************************
   Resets / Rewrites
 *******************************************************************************/
+/*
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -30,9 +31,6 @@ body {
 	background: #DEDEDE;
 }
 
-#print_preview_header {
-  display: none;
-}
 
 button, input, textarea, select {
 	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
@@ -128,6 +126,13 @@ ul, ol {
   padding: 1px 5px;
   background-color: #eee;
 }
+*/
+
+#print_preview_header {
+  display: none;
+}
+
+
 
 /*******************************************************************************
   Classes
@@ -298,17 +303,17 @@ dl.properties_list dd {
 /******************************************************************************
   Buttons
 ******************************************************************************/
-
+/*
 a.button {
   display: block;
   float: left;
   height: 24px;
   margin-right: 6px;
-  padding-right: 12px; /* sliding doors padding */
+  padding-right: 12px;
   text-decoration: none;
   overflow: hidden;
   font-size: 10px;
-  outline: none; /* hide dotted outline in Firefox */
+  outline: none;
   border: 1px solid #bbb;
   border-bottom: 2px solid #aaa;
   background: #FFF;
@@ -397,213 +402,25 @@ a.button span img {
   Menu
 *************************************************************/
 
-#menu {
-  float: right;
-}
 
-#menu ul.group {
-  margin: 0px 0px 0px 10px;
-	padding: 0px 0px 0px;
-	list-style: none;
-	float: left;
-}
-
-#menu ul.group li {
-	display: inline;
-	float: left;
-	position: relative;
-	z-index: 5;
-}
-
-#menu ul.group li a {
-	display: block;
-	float: left;
-	height: 72px;
-	overflow:hidden;
-	font-size: 10px;
-	font-weight: bold;
-}
-
-#menu ul.group li a * {
-	cursor: pointer;
-}
-
-
-#menu ul.group li a span.outer {
-  display: block;
-  height: 59px;
-  padding-top: 13px
-}
-
-#menu ul.group li a span.inner {
-	display: block;
-	padding: 31px 10px 9px 10px;
-	white-space: nowrap;
-	background-repeat: no-repeat;
-	background-position: 50% 3px;
-}
-
-#menu ul.group li.single a {
-  padding-left: 10px;
-}
-
-#menu ul.group li.single a span.outer {
-	padding-right: 10px;
-}
-
-#menu ul.group li.single a span.inner {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-#menu ul.group #searchForm {
-	margin: 0px;
-	padding: 0px 0px 0px 15px;
-	height: 72px;
-	text-align: right;
-}
-
-#menu ul.group #searchForm .inner {
-	height: 57px;
-	padding: 15px 15px 0px 0px;
-}
-
-#menu ul.group #searchForm input.text {
-	font-size: 10px;
-	padding: 2px 3px;
-	width: 120px;
-}
-
-#menu ul.group #searchForm button {
-	background: url('images/icon_search_small.gif') no-repeat left center !important;
-	padding: 1px 0px 1px 14px !important;
-	margin: 5px 0px 0px 0px;
-	border: none;
-	font-size: 10px;
-	font-weight: bold;
-	position: absolute;
-	right: 0px;
-}
-
-#menu ul.group #searchForm .inner div {
-  text-align: right;
-  position: relative;
-  width: 125px;
-  height: 15px;
-}
-
-.navigation_group li:hover ul {
-	display: block;
-}
-
-#menu .additional {
-  text-indent: -9000px;
-}
-
-#menu .additional a {
-  width: 15px;
-  margin-left: -10px; 
-}
-
-#menu .additional a span {
-  width: 14px;
-  display: block;
-  height: 58px;
-  margin-top: 13px;
-  background: url('images/menu_dropdown.gif') no-repeat center center;
-}
-
-#menu ul .item .badge {
-  background: #ff0303;
-  position: absolute;
-  top: 30px;
-  font-size: 9px !important;
-  right: 10px;
-  color: #FFF;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 5px;
-  padding: 0px 3px;
-}
 
 
 /*******************************************************************************
   TABS
 *******************************************************************************/
 
-#tabs {
-}
 
-#tabs .container {
-	height: 26px;
-	padding-top: 4px;
-	border-left: 1px solid #D1D0D0;
-	border-right: 1px solid #D1D0D0;
-	border-bottom: 1px solid #D1D0D0;
-	width: 978px;
-	background: #eee;
-}
-
-#tabs ul {
-	margin: 0px 0px 0px 12px;
-	padding: 0px;
-	list-style: none;
-}
-
-#tabs ul li {
-	display: inline;
-}
-
-#tabs ul li a {
-	display: block;
-	float: left;
-	height: 26px;
-	margin-right: 2px;
-	font-size: 10px;
-	font-weight: bold;
-	overflow: hidden;
-	border: 1px solid #ccc;
-	border-bottom: 0px;
-	background: #DEDEDE;
-}
-
-#tabs ul li a:hover {
-	text-decoration: underline;
-	background-color: #FBFBFB;
-}
-
-#tabs ul li a span {
-	height: 19px;
-	padding: 0px 8px;
-	display: block;
-	padding-top: 7px;
-	cursor: pointer;
-	white-space: nowrap;
-}
-
-#tabs ul li a.current {
-  background-color: #FBFBFB;
-}
-
-#tabs ul li.first a span {
-  padding-left: 10px;
-  padding-right: 10px;
-}
 
 /*******************************************************************************
   PAGE
 *******************************************************************************/
 
 #page .container {
-	background: #FFF;
-	border-left: 1px solid #D1D0D0;
-	border-right: 1px solid #D1D0D0;
-	border-bottom: 1px solid #D1D0D0;
-	width: 978px;
+	/*background: rgb( 245, 245, 245 );*/
 }
 
 #page .container_inner {
-	padding: 0px 0px 20px 0px;
+	/*padding: 0px 0px 20px 0px;*/
 }
 
 #page_header_container {
@@ -790,43 +607,6 @@ a.button span img {
   background: #ddd !important;
 }
 
-
-/** Breadcrumbs **/
-
-#breadcrumbs {
-  clear: both;
-	font-size: 10px;
-	margin: 0px 0px 0px;
-	padding: 5px 31px 0px;
-	height: 23px;
-	list-style: none;
-	display: block;
-}
-
-#breadcrumbs li {
-  margin: 4px 0px 0px 0px;
-  padding: 0px 6px 0px 0px;
-  display: block;
-  float: left;
-}
-
-#breadcrumbs li a {
-  margin-right: 6px;
-}
-
-#breadcrumbs li .current {
-  color: #999;
-}
-
-#breadcrumbs li.first {
-  border-left: 0px;
-  margin-left: 10px;
-}
-
-#breadcrumbs li.dashboard_crumb a span {
-  display: none;
-}
-
 #page_content {
 	padding:10px 40px 0px;
 }
@@ -859,18 +639,11 @@ a.button span img {
 	float: left;
 }
 
-.main_object h2.section_name {
-  padding-bottom: 0px;
-}
-
 .main_object .objects_list {
   margin-bottom: 10px;
 }
 
-.main_object .content {
-	padding-right: 20px;
-	padding-left: 8px;
-}
+.main_object .content {}
 
 .main_object .content.body {
   overflow: hidden;
@@ -891,32 +664,24 @@ a.button span img {
 }
 
 .main_object .properties {
-  margin: 0;
-  padding: 0;
-  font-size: 95%;
+  margin: 0 0 20px 0;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid #CCC;
 }
 
 .main_object .properties dt {
-  padding-left: 5px;
   float: left;
-  width: 145px;
+  width: 15%;
   line-height: 24px;
   color: #666;
 }
 
-.main_object .properties {
-  padding-top: 1px;
-  padding-right: 2px;
-}
+.main_object .properties {}
 
 .main_object .properties dd {
-  margin: 0;
-  padding-left: 150px;
-  border-bottom: 1px solid #f1f1f1;
-  background: #f9f9f9;
-  line-height: 24px;
-  margin-bottom: 2px;
-  margin-top: 1px;
+    width: 35%;
+    margin: 0;
+    line-height: 24px;
 }
 
 .main_object .properties dd.wrapable {
@@ -924,7 +689,7 @@ a.button span img {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-
+/*
 .subobjects_container {
 	width: 755px;
 	padding: 0px 15px 0px 0px;
@@ -933,11 +698,11 @@ a.button span img {
 .subobject {
 	padding: 8px 15px 8px 15px;
 }
-
+*/
 .first_subobject {
 	border-top: 1px dotted #BBBBBB;
 }
-
+/*
 .subobject_permalink {
 	font-weight: bold;
 	color: #999;
@@ -948,10 +713,6 @@ a.button span img {
 	top: -4px;
 }
 
-.quick_comment_form {
-  padding: 15px 20px 10px;
-}
-
 .subobject_permalink:hover {
 	text-decoration: none;
 }
@@ -960,6 +721,7 @@ a.button span img {
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
 }
+
 
 .subobject_author .avatar {
 	display: block;
@@ -995,7 +757,7 @@ a.button span img {
   font-size: 12px;
   line-height: 150%;
 }
-
+*/
 /** Content **/
 
 /*******************************************************************************
@@ -1139,11 +901,7 @@ a.button span img {
 
 /**  Content **/
 
-#page_content h3 {
-	font-size: 13px;
-	margin: 0px;
-	padding: 0px 0px 5px;
-}
+#page_content h3 {}
 
 
 .object_options {
@@ -1275,7 +1033,7 @@ a.starred span {
 .icon_file {
 	background: #99a6d7;
 }
-
+/*
 .flash  {
   display: block;
   overflow: hidden;
@@ -1307,10 +1065,10 @@ a.starred span {
   border: 1px solid #b7220a;
   background: #f1d9d9;
 }
-
+*/
 /** Object resources **/
 
-div.resource {
+/*div.resource {
   margin: 16px 0px 16px 0;
   padding-right: 10px;
 }
@@ -1318,7 +1076,7 @@ div.resource {
 div.resource .body {
   padding: 1px 10px 1px 10px;
 }
-
+*/
 div.resource ul {
   margin: 0;
   padding: 0;
@@ -1360,29 +1118,25 @@ form.object_resource_form {
 
 .odd > td,
 li.odd {  
-  border-bottom: 1px dotted #DDDDDD;
-  background: white;
+  /*border-bottom: 1px dotted #DDDDDD;
+  background: white;*/
 }
 
 .even > td,
 li.even {
-  background: #fafafa;
-  border-bottom: 1px dotted #DDDDDD;
+  /*background: #fafafa;
+  border-bottom: 1px dotted #DDDDDD;*/
 }
 
 div.odd {
-  border-bottom: 1px dotted #bbb;
+  /*border-bottom: 1px dotted #bbb;*/
 }
 
 div.even {
-  border-bottom: 1px dotted #bbb;
-  background-color: #fafafa;
+  /*border-bottom: 1px dotted #bbb;*/
 }
 
-.object_list h3 {
-  margin-bottom: 0px;
-  padding-bottom: 0px !important;
-}
+.object_list h3 {}
 
 .category_list {
   float: left;
@@ -1533,10 +1287,6 @@ table.objects_list th.checkbox, table.objects_list td.checkbox {
 
 h2.section_name,
 h3.section_name {
-  background: #EEEEEE;
-  font-size: 13px;
-  font-weight: bold;
-  border: 1px solid #D1D0D0;
   zoom: 1;
   overflow: hidden;
 }
@@ -1544,7 +1294,7 @@ h3.section_name {
 h2.section_name span.section_name_span,
 h3.section_name span.section_name_span {
   display: block;
-  padding: 6px 15px 7px;
+  padding: 0;
 }
 
 h2.section_name span.section_name_span_span,
@@ -1602,32 +1352,6 @@ h3.day_section {
 /*******************************************************************************
     PAGINATION
 *******************************************************************************/
-
-.pagination {
-  margin: 10px 0px 10px;
-  padding: 0px;
-  height: 25px;
-  background: #fff;
-  border: 1px solid #DEDEDE;
-  float: left;
-}
-
-.pagination .inner_pagination {
-  display: block;
-  font-size: 11px;
-  padding: 5px 15px 7px;
-  height: 13px;
-}
-
-.pagination .inner_pagination span,
-.pagination .inner_pagination a {
-  font-weight: bold;
-}
-
-.pagination span,
-.pagination a {
-  font-weight: bold;
-}
 
 #late_today table {
   font-size: 11px;
@@ -1943,102 +1667,6 @@ p.empty_page a:hover {
   Empty slates
 *******************************************************************************/
 
-.empty_slate {
-  zoom: 1;
-  overflow: hidden;
-  border: 1px solid #eede9c;
-  background: #fffcd9;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  padding: 10px 20px; 
-}
-
-#dashboard .empty_slate {
-  padding-right: 0px;
-}
-
-.empty_slate.with_sidebar .empty_slate_content {
-  padding-right: 16px;
-  width: 550px;
-  float: left;
-}
-
-.empty_slate.with_sidebar .empty_slate_sidebar {
-  padding-top: 30px;
-  width: 290px;
-  overflow: hidden;
-  float: right;
-}
-
-.empty_slate p.empty_slate_footer {
-  text-align: center;
-  clear: both;
-  border-top: 1px solid #eede9c;
-  padding-top: 15px;
-}
-
-.empty_slate p.empty_slate_section_intro {
-  border-bottom: 2px dotted #eede9c;
-  padding-bottom: 10px;
-  font-weight: bold;
-  color: #555;
-}
-
-.empty_slate h3 {
-  margin-bottom: 8px !important;
-  font-size: 15px !important;
-  font-weight: bold;
-  text-align: center;
-}
-
-.empty_slate ul.icon_list {
-  padding-left: 0px;
-  list-style: none;
-  margin-bottom: 10px;
-}
-
-.empty_slate ul.icon_list li {
-  padding: 12px 0;
-}
-
-.empty_slate ul.icon_list li img.icon_list_icon {
-  float: left;
-}
-
-.empty_slate ul.icon_list li a.icon_list_link, .empty_slate ul.icon_list li span.icon_list_title {
-  display: block;
-  font-size: 13px;
-  font-weight: bold;
-  margin-left: 48px;
-}
-
-.empty_slate ul.icon_list li span.icon_list_description {
-  display: block;
-  margin: 4px 0 0 48px;
-  font-size: 11px;
-  color: #666;
-}
-
-.empty_slate ul.icon_list li ol {
-  margin: 8px 0;
-}
-
-.empty_slate ul.icon_list li ol li {
-  padding: 0 0 0 8px !important;
-  margin: 4px 0 !important;
-}
-
-.empty_slate ul.icon_list li ol li strong {
-  color: #333;
-}
-
-.empty_slate ul.icon_list pre {
-  margin: 8px 0;
-  padding: 4px 10px;
-  background: #fff;
-  border: 1px dotted #EEDE9C;
-  line-height: 150%;
-}
 
 /*******************************************************************************
   reorder list

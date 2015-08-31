@@ -185,13 +185,22 @@
         </div>
         {/foreach}
       </div>
-      {/foreach}
+                        {/foreach}
+
+                        <div class="recent-activities-rss">
+                            <a href="{assemble route=project_rss project_id=$active_project->getId() token=$logged_user->getToken(true)}" class="uk-button button button-primary button-rss">
+                                <i class="uk-icon-rss"></i> {lang}Recent Activities{/lang}
+                            </a>
+                        </div>
+      
+                    </div>
     
-      <p class="recent_activities_rss"><a href="{assemble route=project_rss project_id=$active_project->getId() token=$logged_user->getToken(true)}">{lang}Recent Activities{/lang}</a></p>
+                    {else}
+                        <p class="empty_page">{lang}This Project has no Recent Activities{/lang}</p>
+                    {/if}
+        
+                </div>
+            </div>
+        </div>
     </div>
-    {else}
-      <p class="empty_page">{lang}This Project has no Recent Activities{/lang}</p>
-    {/if}
-    </div></div></div>
-  </div>
 </div>

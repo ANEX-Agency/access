@@ -58,6 +58,8 @@
   
   require_once ANGIE_PATH . '/constants.php';
   require_once ANGIE_PATH . '/autoload.php';
+
+  require_once ANGIE_PATH . '/vendor/autoload.php';
   
   require_once ANGIE_PATH . '/functions/environment.php';
   require_once ANGIE_PATH . '/functions/files.php';
@@ -65,13 +67,14 @@
   require_once ANGIE_PATH . '/functions/resources.php';
   require_once ANGIE_PATH . '/functions/utf.php';
   require_once ANGIE_PATH . '/functions/web.php';
+
+  require_once ANGIE_PATH . '/functions/filters.php';
   
   // ---------------------------------------------------
   //  Lets prepare URL data
   // ---------------------------------------------------
   
   prepare_path_info(); // Extract path info and query string from request
-  fix_input_quotes(); // Remove slashes is magic quotes gpc is on from $_GET, $_POST and $_COOKIE
   
   // Base
   require_once ANGIE_PATH . '/classes/AngieObject.class.php';

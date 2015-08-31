@@ -391,14 +391,12 @@ div.attach_files div.attach_files_input {
   width: 76px;
 }
 
-#assignments p.assignments_filter_rss {
-  margin-top: 16px;
+#assignments .assignments_filter_rss {
+  margin-top: 20px;
   text-align: center;
 }
 
-#assignments p.assignments_filter_rss a {
-  padding: 3px 0 3px 20px;
-  background: url('images/rss.gif') no-repeat center left;
+#assignments .assignments_filter_rss a {
 }
 
 /*******************************************************************************
@@ -583,11 +581,6 @@ div.manage_categories form.add_category_form img {
   padding: 0px 0px 8px 0px;
   zoom: 1;
   overflow: hidden;
-}
-
-.select_asignees_inline_widget .company_users table {
-  width: auto !important;
-  margin-left: 16px;
 }
 
 

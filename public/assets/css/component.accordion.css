@@ -1,0 +1,16 @@
+/*
+ * ==================================================
+ * COMPONENT: ACCORDION
+ * ==================================================
+ */
+
+.uk-accordion-content {
+    padding: 0 0 20px 0;
+}
+
+.uk-accordion-title {
+    margin-bottom: 20px;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #DDD;
+    background: none;
+}

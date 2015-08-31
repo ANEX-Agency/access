@@ -24,5 +24,8 @@
     {empty_slate name=checklists module=checklists}
   {/if}
   
-  <p class="archive_link">{link href=$checklists_archive_url}Archive{/link}</p>
+    <div class="archive-link">
+        {link href=$checklists_archive_url class="uk-button button button-primary"}<i class="uk-icon-archive"></i> Archive{/link}
+    </div>
+    
 </div>

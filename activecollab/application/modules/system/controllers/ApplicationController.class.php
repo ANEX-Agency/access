@@ -22,14 +22,14 @@
      *
      * @var boolean
      */
-    var $login_required = true;
+    protected $login_required = true;
     
     /**
      * Name of the login route
      *
      * @var string
      */
-    var $login_route = 'login';
+    protected $login_route = 'login';
     
     /**
      * User needs to have system access permissions
@@ -41,7 +41,7 @@
      *
      * @var boolean
      */
-    var $access_permissions_required = true;
+    protected $access_permissions_required = true;
     
     /**
      * This controller restricts access to people who are not logged in when 
@@ -49,42 +49,42 @@
      *
      * @var boolean
      */
-    var $restrict_access_in_maintenance_mode = true;
+    protected $restrict_access_in_maintenance_mode = true;
     
     /**
      * Smarty instance                           
      *
      * @var Smarty
      */
-    var $smarty;
+    protected $smarty;
     
     /**
      * Wireframe instance
      *
      * @var Wireframe
      */
-    var $wireframe;
+    protected $wireframe;
     
     /**
      * Application object instance
      *
      * @var ActiveCollab
      */
-    var $application;
+    protected $application;
     
     /**
      * Authentication instance (Authentication::instance())
      * 
      * @var Authentication
      */
-    var $authentication;
+    protected $authentication;
     
     /**
      * Logged in user
      *
      * @var User
      */
-    var $logged_user;
+    protected $logged_user;
     
     /**
      * Owner company
@@ -94,14 +94,14 @@
      *
      * @var Company
      */
-    var $owner_company;
+    protected $owner_company;
     
     /**
      * Name of the selected theme
      *
      * @var string
      */
-    var $theme_name;
+    protected $theme_name;
   
     /**
      * Constructor

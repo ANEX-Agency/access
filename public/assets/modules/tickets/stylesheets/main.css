@@ -50,10 +50,6 @@
   Changes
 *******************************************************************************/
 
-#ticket_changes {
-  margin-top: 2px !important;
-}
-
 #ticket_changes ul {
   padding-left: 0 !important;
   list-style: circle !important;

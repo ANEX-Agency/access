@@ -1,0 +1,57 @@
+/*
+ * ==================================================
+ * TYPO
+ * ==================================================
+ */
+
+html {
+    font-size: 100%;
+}
+
+body {
+	color: #333333;
+    font-size: .75em;
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-weight: 300;
+}
+
+h1 {font-size: 2.0em;}
+h2 {font-size: 1.8em;}
+h3 {font-size: 1.6em;}
+h4 {font-size: 1.4em;}
+h5 {font-size: 1.2em;}
+h6 {font-size: 1.0em;}
+
+/*
+ * =========================
+ * BUTTONS
+ * =========================
+ */
+ 
+.btn {
+    font-family: 'Open Sans';
+    font-size: 1.2em;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+/*
+ * =========================
+ * SYNTAXHIGHLIGHTING
+ * =========================
+ */
+
+.content pre {
+	background-color: #222 !important;
+	color: #EEE;
+	overflow: hidden;
+}
+
+.content pre:hover {
+	overflow: auto;
+}

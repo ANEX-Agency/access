@@ -13,20 +13,9 @@
 
         <link rel="shortcut icon" href="{image_url name='favicon.png'}" type="image/x-icon" />
         
-        {if $mobile_device_css}
-        
-            <link rel="stylesheet" href="{$mobile_device_css}" type="text/css" />
-            
-        {else}
-        
-            <link rel="stylesheet" href="{$assets_url}/css.php" type="text/css" />
-            <link rel="stylesheet" href="{$assets_url}/themes/{$theme_name}/theme.css" type="text/css" />
-            
-            <!--[if IE]>
-            <link rel="stylesheet" href="{$assets_url}/stylesheets/iefix.css" type="text/css" />
-            <![endif]-->
-        
-        {/if}
+        <link rel="stylesheet" type="text/css" media="screen" id="style-external" href="{$assets_url}/stylesheets/external.css" />
+        <link rel="stylesheet" type="text/css" media="screen" id="style-main" href="{$assets_url}/css.php?{$assets_query_string}" />
+        <link rel="stylesheet" type="text/css" media="screen" id="style-theme" href="{$assets_url}/themes/{$theme_name}/theme.css" />
         
         <script type="text/javascript" src="{$assets_url}/js.php"></script>
         

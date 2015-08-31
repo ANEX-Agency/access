@@ -9,8 +9,8 @@
    */
   function smarty_function_select_project_template($params, &$smarty) {
     $options = array(
-      option_tag(lang('-- Create a Blank Project --'), ''),
-      option_tag('', '')
+      option_tag( lang( '-- Create a Blank Project --' ), '' ),
+      option_tag( '', '', array( 'disabled' => 'disabled' ) )
     );
     
     $value = array_var($params, 'value', null, true);

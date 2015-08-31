@@ -1,8 +1,8 @@
-<div id="menu">
+<nav id="menu">
 
     {if $_menu && is_foreachable($_menu->groups)}
     
-        <ul class="group">
+        <ul>
         
             {foreach from=$_menu->groups key=_menu_group_name item=_menu_group}
             
@@ -36,4 +36,4 @@
     
     {/if}
     
-</div>
+</nav>

@@ -48,8 +48,8 @@
     
     $options = array();
     if($optional) {
-      $options[] = option_tag(lang('-- System Default (:theme) --', array('theme' => ConfigOptions::getValue('theme'))), '');
-      $options[] = option_tag('', '');
+      $options[] = option_tag( lang('-- System Default (:theme) --', array('theme' => ConfigOptions::getValue('theme'))), '' );
+      $options[] = option_tag( '', '', array( 'disabled' => 'disabled' ) );
     } // if
     
     foreach($themes as $theme) {

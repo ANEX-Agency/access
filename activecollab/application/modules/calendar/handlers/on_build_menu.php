@@ -16,7 +16,7 @@
    */
   function calendar_handle_on_build_menu(&$menu, &$user) {
     $menu->addToGroup(array(
-      new MenuItem('calendar', lang('Calendar'), Calendar::getDashboardCalendarUrl(), get_image_url('navigation/calendar.gif')),
+      new MenuItem('calendar', lang('Calendar'), Calendar::getDashboardCalendarUrl(), 'lnr lnr-calendar-full'),
     ), 'main');
   } // calendar_handle_on_build_menu
 

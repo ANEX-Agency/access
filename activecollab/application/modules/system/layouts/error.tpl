@@ -15,12 +15,12 @@
 
         <link rel="shortcut icon" href="{image_url name='favicon.png'}" type="image/x-icon" />
 
-        <link rel="stylesheet" href="{$assets_url}/stylesheets/error.css" type="text/css" media="screen"/>
-        <link rel="stylesheet" href="{$assets_url}/themes/{$theme_name}/theme.css" type="text/css" media="screen" id="style-theme-css"/>
+        <link rel="stylesheet" type="text/css" media="screen" id="style-main" href="{$assets_url}/css.php?{$assets_query_string}" />
+        <link rel="stylesheet" type="text/css" media="screen" id="style-theme" href="{$assets_url}/themes/{$theme_name}/theme.css" />
     
     </head>
     
-    <body class="app page-error">
+    <body class="app error">
     
         <div class="wrap">
         	
@@ -32,9 +32,13 @@
                     {flash_box}
                     
                     <div id="content">
+                    
                         <div class="box box-error">
+                        
                             {$content_for_layout}
+                            
                         </div>
+                        
                     </div>
                 
                 </div><!-- /.container -->

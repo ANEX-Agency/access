@@ -19,7 +19,7 @@
       $last_visit = UserConfigOptions::getValue('status_update_last_visited', $user);
       
       $menu->addToGroup(array(
-        new MenuItem('status', lang('Status'), assemble_url('status_updates'), get_image_url('icon_menu.gif', STATUS_MODULE), StatusUpdates::countNewMessagesForUser($user, $last_visit))
+        new MenuItem('status', lang('Status'), assemble_url('status_updates'), 'lnr lnr-bullhorn', StatusUpdates::countNewMessagesForUser($user, $last_visit))
       ), 'main');
     } // if
   } // status_handle_on_build_menu

@@ -54,7 +54,7 @@
   
   	$url_base = $content;
   
-  	$separator = array_var($params, 'separator', ', ');
+  	$separator = array_var($params, 'separator', '');
   
   	// ---------------------------------------------------
   	//  Now render pagination
@@ -89,18 +89,20 @@
   	// Render content into an array
   	$before_dots_rendered = false;
   	$after_dots_rendered = false;
+	
+	  $urls[] = '<ul class="uk-pagination">';
   
   	if($total_pages > 3 && $current_page > 1 && $current_page !== false) {
-  		$urls[] = '<a href="' . str_replace($page_placeholder, $current_page-1, $url_base) . '" title="' . lang('Previous Page') . '">&laquo; ' . lang('Prev.') . '</a> | ';
+  		$urls[] = '<li class="uk-pagination-previous"><a href="' . str_replace($page_placeholder, $current_page-1, $url_base) . '" title="' . lang('Previous Page') . '"><i class="uk-icon-angle-double-left"></i></a></li>';
   	}
   
   	for($i = 1; $i <= $total_pages; $i++) {
   		// Print page...
   		if(($i == 1) || ($i == $total_pages) || in_array($i, $sourounding)) {
   			if($current_page == $i) {
-  				$urls[] = '<span class="current"><strong>(' . $i . ')</strong></span>';
+  				$urls[] = '<li class="uk-active"><span>' . $i . '</span></li>';
   			} else {
-  				$urls[] = '<a href="' . str_replace($page_placeholder, $i, $url_base) . '">' . $i . '</a>';
+  				$urls[] = '<li><a href="' . str_replace($page_placeholder, $i, $url_base) . '">' . $i . '</a></li>';
   			} // if
   
   			if($i < $total_pages) {
@@ -121,9 +123,11 @@
   	} // for
   
   	if($total_pages > 3 && $current_page < $total_pages && $current_page !== false) {
-  		$urls[] = ' | <a href="' . str_replace($page_placeholder, $current_page+1, $url_base) . '" title="' . lang('Next Page') . '">' . lang('Next') . ' &raquo;</a> ';
+  		$urls[] = '<li class="uk-pagination-next"><a href="' . str_replace($page_placeholder, $current_page+1, $url_base) . '" title="' . lang('Next Page') . '"><i class="uk-icon-angle-double-right"></i></a></li>';
   	} // if
-  
+	
+	  $urls[] = '</ul>';
+
   	return implode('', $urls);
   } // smarty_function_pagination
 

@@ -12,27 +12,7 @@
  *
  */
 
-@import url(//fonts.googleapis.com/css?family=Open+Sans:300);														/* Load Google Webfonts */
-@import url(//fonts.googleapis.com/css?family=Noto+Sans:300,400);													/* Load Google Webfonts */
-@import url(//cdn.linearicons.com/free/1.0.0/icon-font.min.css);													/* Load Icon Webfonts */
-@import url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);							/* Load Icon Webfonts */
-@import url(//cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css);									/* Load Icon Webfonts */
-@import url(//cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.3.4/css/jquery.mmenu.all.css);							/* Load Icon Webfonts */
-@import url(//cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.3.4/css/extensions/jquery.mmenu.effects.min.css);		/* Load Icon Webfonts */
-
-/*@import url(//cdnjs.cloudflare.com/ajax/libs/remodal/1.0.2/remodal.min.css);										 Load Icon Webfonts */
-/*@import url(//cdnjs.cloudflare.com/ajax/libs/remodal/1.0.2/remodal-default-theme.min.css);							 Load Icon Webfonts */
-
-@import url('assets/css/old.css');																					/*	 Load old styles */
-
-@import url('assets/css/base.css');																					/* Load base styles */
-@import url('assets/css/menu.css');																					/* Load menu styles */
-@import url('assets/css/typo.css');																					/* Load type styles */
-@import url('assets/css/form.css');																					/* Load form styles */
-@import url('assets/css/extras.css');																				/* Load extras styles */
-@import url('assets/css/components.css');																			/* Load component styles */
-@import url('assets/css/experimental.css');																			/* Load experimental styles */
+@import url('assets/css/old.css');																					/* Load old styles */
 
 @import url('print.css') print;																						/* Load print styles */
-
 @import url('custom.css');																							/* Load custom styles */

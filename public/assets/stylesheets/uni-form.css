@@ -178,10 +178,6 @@ table .uniForm .buttonHolder {
 }
 
 /* Columns */
-.col{
-  width:31%;
-  margin:0 2% 0 0;
-}
 
 .col_wide{
   width:49%;
@@ -331,10 +327,6 @@ input.medium {
   width: 200px;
 }
 
-input.long, input.title, textarea.long {
-  width: 98%;
-}
-
 /*
 textarea {
   font: 10pt verdana, arial, helvetica, sans-serif;
@@ -358,7 +350,7 @@ textarea.editor {
   margin-right: 8px !important;
 }
 
-.uniForm .blockLabels label {
+/*.uniForm .blockLabels label {
   padding-bottom: 3px;
   font-weight: bold;
   font-size: 10px;
@@ -368,7 +360,7 @@ textarea.editor {
 
 .uniForm .blockLabels label.inline {
   font-weight: normal;
-}
+}*/
 
 .form_left_col {
   width: 78%;
@@ -405,14 +397,6 @@ textarea.editor {
   
 }
 
-.form_right_col select,
-.form_right_col input {
-  width: 150px;
-}
-
-.form_right_col select {
-  width: 159px;
-}
 
 .form_right_col .details {
   font-size: 10px;

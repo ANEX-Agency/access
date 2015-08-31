@@ -29,13 +29,23 @@
   	
   	if(is_foreachable($permissions)) {
   	  $levels = array(
-  	    PROJECT_PERMISSION_NONE => lang('No Access'),
-   	    PROJECT_PERMISSION_ACCESS => lang('Has Access'),
-   	    PROJECT_PERMISSION_CREATE => lang('and Can Create'),
-   	    PROJECT_PERMISSION_MANAGE => lang('and Can Manage'),
+//  	    PROJECT_PERMISSION_NONE		=> lang('No Access'),
+//   	    PROJECT_PERMISSION_ACCESS	=> lang('View'),
+//   	    PROJECT_PERMISSION_CREATE	=> lang('Create'),
+//   	    PROJECT_PERMISSION_MANAGE	=> lang('Manage'),
+		
+//  	    PROJECT_PERMISSION_NONE		=> '<i class="uk-icon-remove"></i>',
+//   	    PROJECT_PERMISSION_ACCESS	=> '<i class="uk-icon-eye"></i>',
+//   	    PROJECT_PERMISSION_CREATE	=> '<i class="uk-icon-pencil"></i>',
+//   	    PROJECT_PERMISSION_MANAGE	=> '<i class="uk-icon-hand-stop-o"></i>',
+  	    
+		PROJECT_PERMISSION_NONE		=> '<span class="lnr lnr-cross"></span>',
+   	    PROJECT_PERMISSION_ACCESS	=> '<span class="lnr lnr-eye"></span>',
+   	    PROJECT_PERMISSION_CREATE	=> '<span class="lnr lnr-pencil"></span>',
+   	    PROJECT_PERMISSION_MANAGE	=> '<span class="lnr lnr-hand"></span>',
   	  );
   	  
-  	  $result = '<table class="select_project_permissions" id="' . clean($id) . '">
+  	  $result = '<table class="uk-table" id="' . clean($id) . '">
   	    <tr>
   	      <th>' . lang('Object') . '</th>
   	      <th colspan="4">' . lang('Permissions Level') . '</th>
@@ -47,7 +57,7 @@
   	      $permission_value = PROJECT_PERMISSION_NONE;
   	    } // if
   	    
-  	    $result .= '<tr class="' . ($counter % 2 ? 'odd' : 'even') . ' hoverable"><td class="permission_name"><span>' . $permission_name . '</span></td>';
+  	    $result .= '<tr><td class="permission-name"><h4>' . $permission_name . '</h4></td>';
   	    
   	    foreach($levels as $level_value => $level_label) {
   	      $input_id = 'select_permission_' . $permission . '_' . $level_value;
@@ -55,22 +65,32 @@
   	        'name' => $name . '[' . $permission . ']',
   	        'value' => $level_value,
   	        'type' => 'radio',
-  	        'class' => 'inline',
+  	        'class' => '',
   	        'id' => $input_id,
   	      );
   	      
-  	      if($level_value == $permission_value) {
-  	        $input_attributes['checked'] = 'checked';
-  	      } // if
+  	      if($level_value == $permission_value)
+			$input_attributes['checked'] = 'checked';
   	      
   	      $label_attributes = array(
   	        'for' => $input_id,
-  	        'class' => 'inline',
+  	        'class' => ''
   	      );
+		  
+		  $label_attributes['data-uk-tooltip title'] = '';
+		  
+		  if( $level_value == 0 )
+			  $label_attributes['data-uk-tooltip title'] = 'Has no access';
+		  elseif( $level_value == 1 )
+			  $label_attributes['data-uk-tooltip title'] = 'Can view';
+		  elseif( $level_value == 2 )
+			  $label_attributes['data-uk-tooltip title'] = 'Can view and write';
+		  elseif( $level_value == 3 )
+			  $label_attributes['data-uk-tooltip title'] = 'Can view, write and delete';
   	      
-  	      $cell_class = $level_value == PROJECT_PERMISSION_NONE ? 'no_access' : 'has_access';
+  	      $class = $level_value == PROJECT_PERMISSION_NONE ? 'no-access' : 'has-access access-level-' . $level_value;
   	      
-  	      $result .= '<td class="permission_value ' . $cell_class . '">' . open_html_tag('input', $input_attributes, true) . ' ' . open_html_tag('label', $label_attributes) . clean($level_label) . '</label></td>';
+  	      $result .= '<td class="permission-value ' . $class . '">' . open_html_tag('input', $input_attributes, true) . ' ' . open_html_tag('label', $label_attributes) . $level_label . '</label></td>';
   	    } // if
   	    
   	    $result .= '</tr>';

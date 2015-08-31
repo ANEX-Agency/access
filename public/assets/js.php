@@ -27,30 +27,36 @@
   header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
   
   $files = array(
+  
     ASSETS_PATH . '/javascript/date.js',
     ASSETS_PATH . '/javascript/jquery.js',
-    //ASSETS_PATH . '/javascript/jquery.dimensions.js',
+    ASSETS_PATH . '/javascript/jquery.dimensions.js',
     ASSETS_PATH . '/javascript/jquery.bgiframe.js',
     ASSETS_PATH . '/javascript/jquery.form.js',
     ASSETS_PATH . '/javascript/jquery.blockui.js',
     ASSETS_PATH . '/javascript/jquery.jeditable.js',
     ASSETS_PATH . '/javascript/jquery.uni-form.js',
-    ASSETS_PATH . '/javascript/jquery.checkboxes.js',
+    //ASSETS_PATH . '/javascript/jquery.checkboxes.js',
     ASSETS_PATH . '/javascript/jquery.datepicker.js',
     ASSETS_PATH . '/javascript/jquery.scrollTo.js',
-    //ASSETS_PATH . '/javascript/jquery.scrollTo.js',
     ASSETS_PATH . '/javascript/jquery.scalebigimages.js',
     ASSETS_PATH . '/javascript/jquery.ui.js',
     ASSETS_PATH . '/javascript/jquery.cookie.js',
     ASSETS_PATH . '/javascript/jquery.insertAtCursor.js',
-//  BEGIN: TREE COMPONENT
+
     ASSETS_PATH . '/javascript/jquery.tree_component.js',
     ASSETS_PATH . '/javascript/jquery.tree_component_css.js',
     ASSETS_PATH . '/javascript/jquery.listen.js',
-//  END: TREE COMPONENT
+
     ASSETS_PATH . '/javascript/app.js',
+	
     ASSETS_PATH . '/modules/system/javascript/main.js',
     ASSETS_PATH . '/modules/resources/javascript/main.js',
+    
+	ASSETS_PATH . '/javascript/redactor.js',
+	
+    ASSETS_PATH . '/js/init.js'
+	
   );
   
   $modules = isset($_GET['modules']) && $_GET['modules'] ? explode(',', trim($_GET['modules'], ',')) : null;

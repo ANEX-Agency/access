@@ -13,7 +13,7 @@
      *
      * @var array
      */
-    var $api_actions = array('index');
+    protected $api_actions = array('index');
   
     /**
      * Constructor

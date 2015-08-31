@@ -40,7 +40,7 @@
     } // if
     
     // And done...
-    return open_html_tag('button', $params) .'<span><span>'. $caption . '</span></span></button>';
+    return open_html_tag('button', $params) .''. $caption . '</button>';
   } // smarty_block_submit
 
 ?>

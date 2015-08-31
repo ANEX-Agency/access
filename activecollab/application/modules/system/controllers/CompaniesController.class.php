@@ -16,28 +16,37 @@
      *
      * @var string
      */
-    var $controller_name = 'companies';
+    protected $controller_name = 'companies';
     
     /**
      * Name of the parent module
      *
      * @var mixed
      */
-    var $active_module = SYSTEM_MODULE;
+    protected $active_module = SYSTEM_MODULE;
     
     /**
      * Selected company
      *
      * @var Company
      */
-    var $active_company;
+    protected $active_company;
     
     /**
      * Actions available through API
      *
      * @var array
      */
-    var $api_actions = array('index', 'view', 'add', 'edit', 'delete');
+    protected $api_actions = array('index', 'view', 'add', 'edit', 'delete');
+
+    protected $options = array(
+      'address', 'phone', 'fax', 'homepage', 'vat',
+      'email', 'paypal',
+      'lead_source', 'lead_reference',
+      'number', 'note', 'class', 'first_contact',
+      'bankname', 'bankcode', 'account_holder', 'account_number',
+      'account_iban', 'account_bic',
+    );
   
     /**
      * Constructor
@@ -138,7 +147,7 @@
       } // if
       
       $company = new Company();
-      $options = array('office_address', 'office_phone', 'office_fax', 'office_homepage');
+      $options = $this->options;
       
       $company_data = $this->request->post('company');
       $this->smarty->assign(array(
@@ -159,7 +168,7 @@
           foreach($options as $option) {
             $value = trim(array_var($company_data, $option));
             
-            if($option == 'office_homepage' && $value && strpos($value, '://') === false) {
+            if($option == 'homepage' && $value && strpos($value, '://') === false) {
               $value = 'http://' . $value;
             } // if
             
@@ -240,7 +249,7 @@
         $this->httpError(HTTP_ERR_NOT_FOUND);
       } // if
       
-      $options = array('office_address', 'office_phone', 'office_fax', 'office_homepage');
+      $options = $this->options;
       
       $company_data = $this->request->post('company');
       if(!is_array($company_data)) {
@@ -262,7 +271,7 @@
       	  foreach($options as $option) {
             $value = trim(array_var($company_data, $option));
             
-            if($option == 'office_homepage' && $value && strpos($value, '://') === false) {
+            if($option == 'homepage' && $value && strpos($value, '://') === false) {
               $value = 'http://' . $value;
             } // if
             

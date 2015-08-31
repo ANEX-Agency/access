@@ -134,6 +134,8 @@
     if(defined('ANGIE_PATH_INFO') && defined('ANGIE_QUERY_STRING')) {
       return;
     } // if
+
+    /*
     
     if(defined('FORCE_QUERY_STRING') && FORCE_QUERY_STRING) {
       $path_info = array_var($_GET, 'path_info');
@@ -155,6 +157,7 @@
         } // if
       } // if
     } else {
+
       $path_info = '';
       if(isset($_SERVER['PATH_INFO'])) {
         $path_info = $_SERVER['PATH_INFO'];
@@ -170,25 +173,17 @@
       
       $query_string = array_var($_SERVER, 'QUERY_STRING');
     } // if
+
+    */
+
+    $uri = explode('?', $_SERVER['REQUEST_URI'], 2);
+
+    $path_info = $uri[0];
+    $query_string = isset($uri[1]) ? $uri[1] : '';
     
     define('ANGIE_PATH_INFO', $path_info);
     define('ANGIE_QUERY_STRING', $query_string);
   } // prepare_path_info
-  
-  /**
-   * This function will strip slashes if magic quotes is enabled so 
-   * all input data ($_GET, $_POST, $_COOKIE) is free of slashes
-   *
-   * @param void
-   * @return null
-   */
-  function fix_input_quotes() {
-    if(get_magic_quotes_gpc()) {
-      array_stripslashes($_GET);
-      array_stripslashes($_POST);
-      array_stripslashes($_COOKIE);
-    } // if
-  } // fix_input_quotes
   
   /**
   * This function will walk recursivly thorugh array and strip slashes from scalar values

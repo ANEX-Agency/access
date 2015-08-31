@@ -21,8 +21,8 @@
     // ---------------------------------------------------
     
     $menu->addToGroup(array(
-      new MenuItem('people', lang('People'), assemble_url('people'), get_image_url('navigation/people.gif')),
-      new MenuItem('projects', lang('Projects'), assemble_url('projects'), get_image_url('navigation/projects.gif')),
+      new MenuItem('people', lang('People'), assemble_url('people'), 'lnr lnr-user'),
+      new MenuItem('projects', lang('Projects'), assemble_url('projects'), 'lnr lnr-briefcase'),
     ), 'main');
     
     // ---------------------------------------------------
@@ -30,16 +30,16 @@
     // ---------------------------------------------------
     
     $folders = array(
-      new MenuItem('assignments', lang('Assignmt.'), assemble_url('assignments'), get_image_url('navigation/assignments.gif')),
-      new MenuItem('search', lang('Search'), assemble_url('quick_search'), get_image_url('navigation/search.gif')),
-      new MenuItem('starred_folder', lang('Starred'), assemble_url('starred'), get_image_url('navigation/starred.gif'))
+      new MenuItem('assignments', lang('Assignments'), assemble_url('assignments'), 'lnr lnr-paperclip'),
+      new MenuItem('search', lang('Search'), assemble_url('quick_search'), 'lnr lnr-magnifier'),
+      new MenuItem('starred_folder', lang('Starred'), assemble_url('starred'), 'lnr lnr-star')
     );
     
     if($user->isAdministrator() || $user->getSystemPermission('manage_trash')) {
-      $folders[] = new MenuItem('trash', lang('Trash'), assemble_url('trash'), get_image_url('navigation/trash.gif'));
+      $folders[] = new MenuItem('trash', lang('Trash'), assemble_url('trash'), 'lnr lnr-trash');
     } // if
     
-    $folders[] = new MenuItem('quick_add', lang('Quick Add'), assemble_url('homepage'), get_image_url('navigation/quick_add.gif'), null, '+');
+    $folders[] = new MenuItem('quick_add', lang('Quick Add'), assemble_url('homepage'), 'lnr lnr-plus-circle', null, '+');
     
     $menu->addToGroup($folders, 'folders');
   } // system_handle_on_build_menu

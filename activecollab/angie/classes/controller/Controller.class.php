@@ -9,21 +9,21 @@
    *
    * @package angie.library.controller
    */
-  class Controller extends AngieObject {
+  class Controller {
     
     /**
      * Name of this controller (underscore)
      *
      * @var string
      */
-    var $controller_name;
+    protected $controller_name;
     
     /**
      * Action that was (or need to be) executed
      *
      * @var string
      */
-    var $action;
+    protected $action;
     
     /**
      * System controller class
@@ -34,14 +34,14 @@
      *
      * @var string
      */
-    var $system_controller_class;
+    protected $system_controller_class;
     
     /**
      * Time when controller is constructed
      *
      * @var DateTimeValue
      */
-    var $request_time;
+    protected $request_time;
     
     /**
      * Contruct controller and set controller name
@@ -50,7 +50,6 @@
      * @return null
      */
     function __construct() {
-      parent::__construct();
       
       // Allow programmer to specify controller name based. PHP4 will always 
       // return lowercased class name so we need an option to set our own value

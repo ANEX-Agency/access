@@ -17,7 +17,7 @@
   function timetracking_handle_on_build_menu(&$menu, &$user) {
     if($user->isAdministrator() || $user->getSystemPermission('use_time_reports')) {
       $menu->addToGroup(array(
-        new MenuItem('time', lang('Time'), assemble_url('global_time'), get_image_url('navigation/time.gif')),
+        new MenuItem('time', lang('Time'), assemble_url('global_time'), 'lnr lnr-clock'),
       ), 'main');
     } // if
   } // timetracking_handle_on_build_menu

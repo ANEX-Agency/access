@@ -34,8 +34,13 @@
     {/foreach}
   </div>
   {/foreach}
+  
+    <div class="recent-activities-rss">
+    	<a href="{assemble route=rss token=$logged_user->getToken(true)}" class="uk-button button button-primary button-rss">
+        	<i class="uk-icon-rss"></i> {lang}Recent Activities{/lang}
+        </a>
+    </div>
 
-  <p class="recent_activities_rss"><a href="{assemble route=rss token=$logged_user->getToken(true)}">{lang}Recent Activities{/lang}</a></p>
 {else}
   <p class="empty_page">{lang}There are no activities logged{/lang}</p>
 {/if}

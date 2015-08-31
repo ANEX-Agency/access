@@ -1,0 +1,37 @@
+/*
+ * ==================================================
+ * COMPONENT: TABS
+ * ==================================================
+ */
+
+
+.tabs {
+	line-height: 0;
+}
+
+.tabs ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    list-style: none;
+}
+
+.tabs ul li {
+    float: left;
+}
+
+.tabs ul li a {
+    padding: 35px 2em 30px;
+    display: block;
+    
+    color: #999;
+    font-size: 1.3em;
+    font-family: 'Open Sans', Arial;
+    text-transform: uppercase;
+}
+
+.tabs ul li a.current,
+.tabs ul li a:hover {
+    color: rgb( 245, 245, 245 );
+    background-color: rgb( 54, 54, 54 );
+}

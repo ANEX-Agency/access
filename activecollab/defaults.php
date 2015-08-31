@@ -6,7 +6,8 @@
   
   // URL-s
   if(!defined('URL_BASE')) {
-  	define('URL_BASE', ROOT_URL . '/index.php');
+  	//define('URL_BASE', ROOT_URL . '/index.php');
+        define('URL_BASE', ROOT_URL);
   } // if
   if(!defined('ASSETS_URL')) {
     define('ASSETS_URL', ROOT_URL . '/assets');
@@ -116,7 +117,7 @@
   } // if
   
   if(!defined('USER_SESSION_LIFETIME')) {
-    define('USER_SESSION_LIFETIME', 1800); // 30 minutes
+    define('USER_SESSION_LIFETIME', 3600); // 60 minutes
   } // if
   
   // if this option is set to true, mailbox manager will use some of custom functions
@@ -159,7 +160,7 @@
   define('COOKIE_PREFIX', 'ac');
   
   // Flash
-  define('USE_FLASH', true);
+  define('USE_FLASH', false);
   
   // MVC
   define('DEFAULT_MODULE', 'system');

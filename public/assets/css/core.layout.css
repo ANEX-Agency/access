@@ -1,0 +1,371 @@
+/*
+ * ====================================================================================================
+ * 2.0.0 - LAYOUT
+ * ====================================================================================================
+ */
+
+
+.app {}
+
+.wrap {
+    min-height: 100vh;
+    padding: 54px 0 0;
+}
+
+@media (min-width: 768px) {
+    
+    .wrap {
+        padding: 84px 0 0;
+    }
+    
+}
+
+@media (min-width: 1400px) {
+    
+    .wrap {
+        padding: 150px 0 50px;
+    }
+
+}
+
+.container {
+    width: 100%;
+}
+
+@media (min-width: 1220px) {
+    
+    .uk-container {
+        max-width: 100%;
+        padding: 0 2%;
+    }
+    
+}
+
+
+
+/*
+ * ==================================================
+ * 2.1.0 - HEADER
+ * ==================================================
+ */
+
+header {
+	width: 100%;
+	height: 54px;
+    
+	padding: 0;
+	margin: 0;
+
+	position: fixed;
+	top: 0;
+	z-index: 100;
+    
+    border: none;
+	background: rgba( 34, 34, 34, .9 );
+    
+    -webkit-box-shadow: 0 0 20px rgba( 0, 0, 0, .5 );
+       -moz-box-shadow: 0 0 20px rgba( 0, 0, 0, .5 );
+            box-shadow: 0 0 20px rgba( 0, 0, 0, .5 );
+				
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+			transition: all .2s linear;
+}
+
+header .container {
+    width: auto;
+}
+
+@media (min-width: 768px) {
+    
+    header {
+        height: 84px;
+    }
+    
+}
+
+/*
+ * =========================
+ * 2.1.1 - LOGO
+ * =========================
+ */
+
+#logo {
+    float: left;
+	position: relative; 
+    font-size: 0;   
+}
+
+#logo a {}
+
+#logo a:after {
+    content: '\e800';
+    font-family: 'Linearicons-Free';
+    font-size: 24px;
+    color: #EEE;
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    margin-top: -12px;
+    opacity: 0;
+    
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+#logo a:hover:after {
+    opacity: 1;
+}
+
+#logo img {
+    max-height: 54px;
+}
+
+@media (min-width: 768px) {
+    
+    #logo img {
+        max-height: 84px;
+    }
+    
+}
+
+
+/*
+ * ========================================
+ * USER PANEL =============================
+ * ========================================
+ */
+
+#user {
+    float: right;
+    font-size: 11px;
+	text-align: right;
+}
+
+#user a {
+    color: #DDD;
+    font-weight: 300;
+}
+
+#user > a {
+    margin: 7px 0;
+    padding: 0 10px;
+    display: inline-block;
+
+    line-height: 0;
+    
+    border-left: 1px solid #444;
+}
+
+@media (min-width: 768px) {
+    
+    #user > a {
+        margin: 22px 0;
+        padding: 0 20px;
+    }
+    
+}
+
+#user .panel {
+    min-width: 160px;
+    position: absolute;
+    top: 84px;
+    right: 0;
+    z-index: -1;
+    
+    -webkit-transition: top .2s linear, opacity .2s linear;
+       -moz-transition: top .2s linear, opacity .2s linear;
+            transition: top .2s linear, opacity .2s linear;
+}
+
+#user .panel ul {
+    padding: 0;
+    list-style: none;
+    background: rgba( 34, 34, 34, .9 );
+}
+
+#user .panel ul li a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 1.2em;
+    border-left: 1px solid transparent;
+}
+#user .panel ul li a:hover {
+    border-left: 1px solid #C00;
+    background: rgba( 255, 255, 255, .1 );
+}
+
+#user .panel.visible {
+    top: 54px;
+    opacity: 1;
+    overflow: auto;
+}
+
+@media (min-width: 768px) {
+    
+    #user .panel.visible {
+        top: 84px;
+    }
+    
+}
+
+#user .panel.invisible {
+    height: 0;
+    top: 70px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    
+    #user .panel.invisible {
+        top: 100px;
+    }
+    
+}
+
+/*
+ * ==================================================
+ * 0.0.0 - MAIN
+ * ==================================================
+ */
+
+main {
+	width: 100%;
+    margin: auto;
+    
+	background: rgba( 250, 250, 250, .95 );
+}
+
+@media (min-width: 1400px) {
+    
+    main {
+        width: 90%;
+    }
+    
+}
+
+@media (min-width: 1600px) {
+    
+    main {
+        width: 80%;
+    }
+    
+}
+
+/*
+ * ==================================================
+ * 0.0.0 - ASIDE
+ * ==================================================
+ */
+
+.widget {
+    margin: 0 0 20px 0;
+}
+
+.widget-header {
+    border-bottom: 1px solid #DDD;
+}
+
+.widget-header h2 {
+    margin: 0 0 10px 0;
+}
+
+.widget-body {
+    padding: 10px 0;
+}
+
+
+
+
+
+/*
+ * WIDGET: PINNED PROJECTS
+ */
+.widget-pinned-projects ul {
+    padding: 0; 
+    margin: 0; 
+    list-style: none;
+}
+
+.widget-pinned-projects ul li {
+    margin: 0;
+    line-height: normal;
+    
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+.widget-pinned-projects ul li img {
+    float: left;
+    margin: 10px 10px 0 0;
+    
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+.widget-pinned-projects ul li .project_link {
+    padding: 10px;
+    display: block;
+}
+
+.widget-pinned-projects ul li .unpin {
+    margin: 10px -20px 0 0;
+    float: right;
+    
+    -webkit-transition: all .2s linear;
+       -moz-transition: all .2s linear;
+            transition: all .2s linear;
+}
+
+.widget-pinned-projects ul li:hover {
+    background: #FFF;
+}
+
+.widget-pinned-projects ul li:hover img {
+    margin: 10px 10px 0 10px;
+}
+
+.widget-pinned-projects ul li:hover .unpin {
+    margin: 10px 10px 0 0;
+}
+
+
+/*
+ * WIDGET: WHO IS ONLINE
+ */
+.widget-who-is-online ul {
+    padding: 0; 
+    margin: 0; 
+    list-style: none;
+}
+
+.widget-who-is-online ul li {
+    width: 100%;
+    float: left;
+    margin: 0 0 10px 0;
+}
+
+.widget-who-is-online ul li img {
+    max-width: 24px;
+    float: left; 
+    margin: 0 10px 0 0; 
+}
+
+.widget-who-is-online ul li h5 {margin: 0;}
+.widget-who-is-online ul li .meta {}
+
+
+
+/*
+ * ==================================================
+ * 0.0.0 - TABLE
+ * ==================================================
+ */
+
+table {
+    width: 100%;
+}

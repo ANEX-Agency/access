@@ -94,7 +94,7 @@
     .uniForm .blockLabels .ctrlHolder{
     }
 
-      .uniForm .blockLabels label,
+      /*.uniForm .blockLabels label,
       .uniForm .blockLabels .label{
         display:block;
         float:none;
@@ -109,7 +109,7 @@
 
       .uniForm .blockLabels .inlineLabel{
         position:relative; top:.15em;
-      }
+      }*/
 
       .uniForm .blockLabels .textInput,
       .uniForm .blockLabels .fileUpload{

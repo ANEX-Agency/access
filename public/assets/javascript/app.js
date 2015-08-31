@@ -296,10 +296,12 @@ App.layout = function() {
         return false;
       });
       
-      // Flash
-      $('#success, #error').click(function() {
-        $(this).hide('fast');
-      });
+	// Flash
+	$( '#success, #error' ).click(function() {
+		
+		$(this).slideUp();
+		
+	});
       
       // Hoverable
       $('.hoverable').hover(function() {

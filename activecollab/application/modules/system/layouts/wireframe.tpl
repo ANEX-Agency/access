@@ -18,13 +18,9 @@
         
         <link rel="shortcut icon" href="{brand what=favicon}" type="image/x-icon" />
         
-        <link rel="stylesheet" href="{$assets_url}/css.php?{$assets_query_string}" type="text/css" media="screen" id="style_main_css"/>
-        <link rel="stylesheet" href="{$assets_url}/themes/{$theme_name}/theme.css" type="text/css" media="screen" id="style_theme_css"/>
-        
-        <!--[if IE]>
-        <link rel="stylesheet" href="{$assets_url}/stylesheets/iefix.css" type="text/css" />
-        <link rel="stylesheet" href="{$assets_url}/themes/{$theme_name}/iefix.css" type="text/css" media="screen"/>
-        <![endif]-->
+        <link rel="stylesheet" type="text/css" media="screen" id="style-external" href="{$assets_url}/stylesheets/external.css" />
+        <link rel="stylesheet" type="text/css" media="screen" id="style-main" href="{$assets_url}/css.php?{$assets_query_string}" />
+        <link rel="stylesheet" type="text/css" media="screen" id="style-theme" href="{$assets_url}/themes/{$theme_name}/theme.css" />
         
         <link rel="stylesheet" href="{$assets_url}/print.php?{$assets_query_string}" type="text/css" media="print" />
         <link rel="stylesheet" href="{$assets_url}/themes/{$theme_name}/print.css" type="text/css" media="print" />
@@ -85,54 +81,50 @@
             <!-- HEADER > START -->
             <header>
             
-                <div class="container">
-                
-                    <div id="logo">
-                        <a href="{assemble route=homepage}">
-                            <img src="{brand what=logo}" alt="{$owner_company->getName()|clean} logo" title="{lang}Back to Start{/lang}" />
-                        </a>
-                    </div>
-                    
-                    <div id="user">
-                    
-                        <!--{if $logged_user->getFirstName()}
-                            {assign var=_welcome_name value=$logged_user->getFirstName()}
-                        {else}
-                            {assign var=_welcome_name value=$logged_user->getDisplayName()}
-                        {/if}-->
-                        
-                        <a href="#" class="avatar">
-                        	<img src="{$logged_user->getAvatarUrl(true)}" alt="" class="" />
-                        </a>
-                        
-                        <div class="panel invisible">
-                        	<ul>
-                            	{if $logged_user->isAdministrator()}
-                                	<li>
-                                        <a href="{assemble route=admin}" class="{if $wireframe->current_menu_item == 'admin'}active{/if}">
-                                            {lang}Admin{/lang}
-                                        </a>
-                                    </li>
-                                {/if}
-                            	<li><a href="{$logged_user->getViewUrl()}" class="{if $wireframe->current_menu_item == 'profile'}active{/if}">{lang}Profile{/lang}</a></li>
-                            	<li>{link href='?route=logout'}{lang}Logout{/lang}{/link}</li>
-                                <!--<li><a href="#modal">Call the modal with data-remodal-id="modal"</a></li>-->
-                            </ul>
-                        </div>
-                        
-                    </div>
-                    
-                    {menu}
-                    
-                    {literal}
-                        
-                        <script type="text/javascript">
-                            App.MainMenu.init('menu');
-                        </script>
-                        
-                    {/literal}
-
+                <div id="logo">
+                    <a href="{assemble route=homepage}">
+                        <img src="{brand what=logo}" alt="{$owner_company->getName()|clean} logo" title="{lang}Back to Start{/lang}" />
+                    </a>
                 </div>
+                    
+                <div id="user">
+                
+                    <!--{if $logged_user->getFirstName()}
+                        {assign var=_welcome_name value=$logged_user->getFirstName()}
+                    {else}
+                        {assign var=_welcome_name value=$logged_user->getDisplayName()}
+                    {/if}-->
+                    
+                    <a href="#" class="avatar">
+                        <img src="{$logged_user->getAvatarUrl(true)}" alt="" class="" />
+                    </a>
+                    
+                    <div class="panel invisible">
+                        <ul>
+                            {if $logged_user->isAdministrator()}
+                                <li>
+                                    <a href="{assemble route=admin}" class="{if $wireframe->current_menu_item == 'admin'}active{/if}">
+                                        {lang}Admin{/lang}
+                                    </a>
+                                </li>
+                            {/if}
+                            <li><a href="{$logged_user->getViewUrl()}" class="{if $wireframe->current_menu_item == 'profile'}active{/if}">{lang}Profile{/lang}</a></li>
+                            <li>{link href='?route=logout'}{lang}Logout{/lang}{/link}</li>
+                            <!--<li><a href="#modal">Call the modal with data-remodal-id="modal"</a></li>-->
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                {menu}
+                
+                {literal}
+                    
+                    <script type="text/javascript">
+                        App.MainMenu.init('menu');
+                    </script>
+                    
+                {/literal}
                 
             </header>
             <!-- HEADER > END -->
@@ -142,124 +134,116 @@
             
                 <div class="container">
             
-                    <!--<div class="row">
-                        <div class="col" style="background: #090; width: 60%;">
-                        
-                        </div>
-                        <div class="col" style="background: #099;">
-                        
-                        </div>
-                    </div>-->
-                
                     {if isset($page_tabs)}
-                        <div id="tabs" class="tabs">
+                    
+                        <div class="tabs">
+                        
                             <ul>
                                 {foreach from=$page_tabs->data key=current_tab_name item=current_tab name=page_tabs}
-                                    <li {if $smarty.foreach.page_tabs.iteration == 1}class="first"{/if} id="page_tab_{$current_tab_name}"><a href="{$current_tab.url}" {if $current_tab_name == $page_tab}class="current"{/if}><span>{$current_tab.text|clean}</span></a></li>
+                                    <li {if $smarty.foreach.page_tabs.iteration == 1}{/if} id="page_tab_{$current_tab_name}">
+                                    	<a href="{$current_tab.url}" {if $current_tab_name == $page_tab}class="current"{/if}>{$current_tab.text|clean}</a>
+                                    </li>
                                 {/foreach}
                             </ul>
+                            
                         </div>
+                        
                     {/if}
                     
                     <div class="page-header {if $wireframe->details}with_page_details{else}without_page_details{/if}">
                     
-                    	<div class="page-header-left">
-                    
-                            <div class="page-title">
-                                {if instance_of($wireframe->page_company, 'Company') && instance_of($wireframe->page_project, 'Project')}
-                                    
-                                    <h1>
-                                        <!--<span>
-                                            {$wireframe->page_company->getName()|clean} | {$wireframe->page_project->getName()|clean} |
-                                        </span>-->
-                                        {page_title default="Page"}
-                                    </h1>
-                                    
-                                {elseif instance_of($wireframe->page_company, 'Company')}
-                                    <h1><!--<span>{$wireframe->page_company->getName()|clean} | </span>--> {page_title default="Page"}</h1>
-                                {else}
-                                    <h1>{page_title default="Page"}</h1>
-                                {/if}
-                            </div>
-                            
-                            <div class="page-details">
-                                {if $wireframe->details}
-                                    <p>{$wireframe->details}</p>
-                                {/if}
-                            </div>
-                            
-                            <div class="breadcrumbs">
-                            
-                                <ul>
-                                    <li class="first"><a href="{assemble route=dashboard}">{lang}Dashboard{/lang}</a>&raquo;</li>
-                                    {foreach from=$wireframe->bread_crumbs item=bread_crumb name=_bread_crumb}
-                                        <li>
-                                            {if $bread_crumb.url}
-                                                <a href="{$bread_crumb.url}" title="{$bread_crumb.text|clean}">{$bread_crumb.text|clean|excerpt:20}</a>&raquo;
-                                            {else}
-                                                <span class="current">{$bread_crumb.text|clean}</span>
-                                            {/if}
-                                        </li>
-                                    {/foreach}
-                                </ul>
+                        <div class="uk-grid">
+                                            
+                            <div class="page-header-left uk-width-1-1 uk-width-medium-2-3">
+                        
+                                <div class="page-title">
+                                    {if instance_of($wireframe->page_company, 'Company') && instance_of($wireframe->page_project, 'Project')}
+                                        <h1>{page_title default="Page"}</h1>
+                                    {elseif instance_of($wireframe->page_company, 'Company')}
+                                        <h1>{page_title default="Page"}</h1>
+                                    {else}
+                                        <h1>{page_title default="Page"}</h1>
+                                    {/if}
+                                </div>
                                 
-                            </div>
-                        
-                        </div>
-                        
-                        <div class="page-header-right">
-                        
-                            <div class="actions">
-                            
-                                {assign var=page_actions value=$wireframe->getSortedPageActions()}
-                    
-                                {if $wireframe->print_button || is_foreachable($page_actions)}
+                                <div class="page-details">
+                                    {if $wireframe->details}
+                                        <p>{$wireframe->details}</p>
+                                    {/if}
+                                </div>
+                                
+                                <div class="breadcrumbs">
+                                
                                     <ul>
-                                        {if is_foreachable($page_actions)}
-                                            {foreach from=$page_actions key=page_action_name item=page_action name=page_actions}
-                                                {if count($page_actions) == 1}
-                                                    <li id="{$page_action_name}_page_action" class="single {if is_foreachable($page_action.subitems)}with_subitems hoverable{else}without_subitems{/if}">
-                                                {else}
-                                                    <li id="{$page_action_name}_page_action" class="{if $smarty.foreach.page_actions.first}first{elseif $smarty.foreach.page_actions.last}last {/if} {if is_foreachable($page_action.subitems)}with_subitems hoverable{else}without_subitems{/if}">
-                                                {/if}
-                                                
-                                                {link id=$page_action.id class="btn" href=$page_action.url method=$page_action.method confirm=$page_action.confirm not_lang=yes}
-                                                    <span>
-                                                        {$page_action.text|clean}
-                                                        {if is_foreachable($page_action.subitems)}
-                                                            <img src="{image_url name='dropdown_arrow.gif'}" alt="" />
-                                                        {/if}
-                                                    </span>
-                                                {/link}
-                    
-                                                {if is_foreachable($page_action.subitems)}
-                                                    <ul>
-                                                        {foreach from=$page_action.subitems key=page_action_subaction_name item=page_action_subaction}
-                                                            {if $page_action_subaction.text && $page_action_subaction.url}
-                                                                <li id="{$page_action_subaction_name}_page_action" class="subaction">{link href=$page_action_subaction.url method=$page_action_subaction.method id=$page_action_subaction.id confirm=$page_action_subaction.confirm}{$page_action_subaction.text|clean}{/link}</li>
-                                                            {else}
-                                                                <li id="{$page_action_subaction_name}_page_action" class="separator"></li>
-                                                            {/if}
-                                                        {/foreach}
-                                                    </ul>
-                                                {/if}
-                                                
-                                                </li>
-                                                {counter name=actions_counter_name assign=actions_counter}
-                                            {/foreach}
-                                        {/if}
-                                        {if $wireframe->print_button}
-                                            <li class="single">
-                                                <a href="javascript:window.print();" id="print_button" class="btn">
-                                                    <span class="lnr lnr-printer"></span>
-                                                </a>
-                                            </li>
-                                        {/if}
+                                        <li class="first"><a href="{assemble route=dashboard}">{lang}Dashboard{/lang}</a>&nbsp;&nbsp;/&nbsp;&nbsp;</li>
+                                        {foreach from=$wireframe->bread_crumbs item=bread_crumb name=_bread_crumb}
+                                            {if $bread_crumb.url}
+                                                <li><a href="{$bread_crumb.url}" title="{$bread_crumb.text|clean}">{$bread_crumb.text|clean|excerpt:20}</a>&nbsp;&nbsp;/&nbsp;&nbsp;</li> 
+                                            {else}
+                                                <li><span class="current">{$bread_crumb.text|clean}</span></li>
+                                            {/if}
+                                        {/foreach}
                                     </ul>
-                                {/if}
-                                
-                            </div><!-- /.actions -->
+                                    
+                                </div>
                             
+                            </div>
+                            
+                            <div class="page-header-right uk-width-1-1 uk-width-medium-1-3">
+                            
+                                <div class="actions">
+                                
+                                    {assign var=page_actions value=$wireframe->getSortedPageActions()}
+                        
+                                    {if $wireframe->print_button || is_foreachable($page_actions)}
+                                        <ul>
+                                            {if is_foreachable($page_actions)}
+                                                {foreach from=$page_actions key=page_action_name item=page_action name=page_actions}
+                                                    {if count($page_actions) == 1}
+                                                        <li id="{$page_action_name}_page_action" class="single {if is_foreachable($page_action.subitems)}with_subitems hoverable{else}without_subitems{/if}">
+                                                    {else}
+                                                        <li id="{$page_action_name}_page_action" class="{if $smarty.foreach.page_actions.first}first{elseif $smarty.foreach.page_actions.last}last {/if} {if is_foreachable($page_action.subitems)}with_subitems hoverable{else}without_subitems{/if}">
+                                                    {/if}
+                                                    
+                                                    {link id=$page_action.id class="btn" href=$page_action.url method=$page_action.method confirm=$page_action.confirm not_lang=yes}
+                                                        <span>
+                                                            {$page_action.text|clean}
+                                                            {if is_foreachable($page_action.subitems)}
+                                                                <img src="{image_url name='dropdown_arrow.gif'}" alt="" />
+                                                            {/if}
+                                                        </span>
+                                                    {/link}
+                        
+                                                    {if is_foreachable($page_action.subitems)}
+                                                        <ul>
+                                                            {foreach from=$page_action.subitems key=page_action_subaction_name item=page_action_subaction}
+                                                                {if $page_action_subaction.text && $page_action_subaction.url}
+                                                                    <li id="{$page_action_subaction_name}_page_action" class="subaction">{link href=$page_action_subaction.url method=$page_action_subaction.method id=$page_action_subaction.id confirm=$page_action_subaction.confirm}{$page_action_subaction.text|clean}{/link}</li>
+                                                                {else}
+                                                                    <li id="{$page_action_subaction_name}_page_action" class="separator"></li>
+                                                                {/if}
+                                                            {/foreach}
+                                                        </ul>
+                                                    {/if}
+                                                    
+                                                    </li>
+                                                    {counter name=actions_counter_name assign=actions_counter}
+                                                {/foreach}
+                                            {/if}
+                                            {if $wireframe->print_button}
+                                                <li class="single">
+                                                    <a href="javascript:window.print();" id="print_button" class="btn">
+                                                        <span class="lnr lnr-printer"></span>
+                                                    </a>
+                                                </li>
+                                            {/if}
+                                        </ul>
+                                    {/if}
+                                    
+                                </div><!-- /.actions -->
+                                
+                            </div>
+                        
                         </div>
                     
                     </div>
@@ -299,8 +283,6 @@
                                     
                                 </div>
                                 
-                                <div class="content_fix"></div>
-                                
                             </div><!-- /.container_inner -->
                             
                         </div><!-- /.container -->
@@ -314,12 +296,8 @@
             
             <!-- FOOTER > START -->
             <footer>
-            	
-                <div class="container">
                     
-                    {benchmark}
-                
-                </div><!-- /.container -->
+                {benchmark}
                 
             </footer>
             <!-- FOOTER > END -->
@@ -340,9 +318,18 @@
 		</div>
         <!-- SIDE PANEL > START -->
 
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js"></script>
+        
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.3.4/js/jquery.mmenu.min.all.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.3.4/js/addons/jquery.mmenu.dragopen.min.js"></script>        
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.3.4/js/addons/jquery.mmenu.fixedelements.min.js"></script>
-                
+        
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/uikit/2.22.0/js/uikit.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/uikit/2.22.0/js/components/grid.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/uikit/2.22.0/js/components/datepicker.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/uikit/2.22.0/js/components/accordion.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/uikit/2.22.0/js/components/tooltip.min.js"></script>
+
         <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/remodal/1.0.2/remodal.min.js"></script>-->
 
     </body>

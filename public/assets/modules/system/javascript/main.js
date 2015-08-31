@@ -606,16 +606,16 @@ App.system.controllers.users = {
         
         wrapper.find('div.head input[type=checkbox]').each(function() {
           if(this.checked) {
-            body.show('fast');
+            body.slideDown('fast');
           } else {
-            body.hide();
+            body.slideUp();
           } // if
           
           $(this).click(function() {
             if(this.checked) {
-              body.show('fast');
+              body.slideDown('fast');
             } else {
-              body.hide();
+              body.slideUp();
             } // if
           });
         });
@@ -751,13 +751,7 @@ App.widgets.DashboardFavoriteProjects = function() {
         
         return false;
       });
-      
-      favorite_row.hover(function () {
-        $(this).find('a.unpin').show();
-      }, function () {
-        $(this).find('a.unpin').hide();
-      });
-      
+            
       return favorite_row;
   };
   
@@ -1405,6 +1399,27 @@ App.widgets.SelectProjectPermissions = function() {
 App.widgets.SelectUserProjectPermissions = function() {
   
   // Public interface
+//  return {
+//    
+//    /**
+//     * Initialize select user project permissions widget
+//     *
+//     * @param string wrapper_id
+//     */
+//    init : function(wrapper_id) {
+//      var wrapper = $('#' + wrapper_id);
+//      wrapper.find('td.radio input').click(function() {
+//        if($(this).attr('value') == '0') {
+//          wrapper.find('.custom-permissions').slideDown();
+//        } else {
+//          wrapper.find('.custom-permissions').slideUp();
+//        } // if
+//      });
+//    }
+//    
+//  };
+  
+  // Public interface
   return {
     
     /**
@@ -1414,11 +1429,11 @@ App.widgets.SelectUserProjectPermissions = function() {
      */
     init : function(wrapper_id) {
       var wrapper = $('#' + wrapper_id);
-      wrapper.find('td.radio input').click(function() {
+      wrapper.find('ul li input').click(function() {
         if($(this).attr('value') == '0') {
-          wrapper.find('td div.custom_permissions').show('fast');
+          wrapper.find('.custom-permissions').slideDown();
         } else {
-          wrapper.find('td div.custom_permissions').hide('fast');
+          wrapper.find('.custom-permissions').slideUp();
         } // if
       });
     }
@@ -2074,7 +2089,7 @@ App.system.QuickAdd = function() {
       
       // flush behaviour
       step_2.find('.flash').click(function () {
-        $(this).hide('fast');
+        $(this).hide('slow');
       });
       
       // back button

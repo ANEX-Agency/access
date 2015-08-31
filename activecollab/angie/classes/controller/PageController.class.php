@@ -17,42 +17,42 @@
      *
      * @var Request
      */
-    var $request;
+    protected $request;
   
     /**
      * Template name. If it is empty this controller will use action name.php
      *
      * @var string
      */
-    var $template;
+    protected $template;
     
     /**
      * Layout name. If it is empty this controller will use its name.php
      *
      * @var string
      */
-    var $layout;
+    protected $layout;
     
     /**
      * Do not render the layout, render only content
      *
      * @var boolean
      */
-    var $skip_layout = false;
+    protected $skip_layout = false;
     
     /**
      * Automaticly render template / layout if action ends without exit
      *
      * @var boolean
      */
-    var $auto_render = true;
+    protected $auto_render = true;
     
     /**
      * Array of method names that are available through API
      *
      * @var array
      */
-    var $api_actions = array();
+    protected $api_actions = array();
     
     /**
      * Construct controller

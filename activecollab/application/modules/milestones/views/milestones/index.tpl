@@ -1,4 +1,4 @@
-{title}Active milestones{/title}
+{title}Active Milestones{/title}
 {add_bread_crumb}Active{/add_bread_crumb}
 
 <div class="list_view" id="milestones">

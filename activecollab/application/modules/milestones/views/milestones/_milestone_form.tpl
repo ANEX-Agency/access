@@ -1,47 +1,72 @@
-<div class="form_left_col">
-  {wrap field=name}
-    {label for=milestoneName required=yes}Summary{/label}
-    {text_field name='milestone[name]' value=$milestone_data.name id=milestoneName class='title required validate_minlength 3'}
-  {/wrap}
-  
-  {if $active_milestone->isNew()}
-    {wrap field=date_range}
-      <div class="col">
-      {wrap field=start_on}
-        {label for=milestoneStartOn required=yes}Start on{/label}
-        {select_date name='milestone[start_on]' value=$milestone_data.start_on id=milestoneStartOn  class=required}
-      {/wrap}
-      </div>
-      
-      <div class="col">
-      {wrap field=due_on}
-        {label for=milestoneDueOn required=yes}Due on{/label}
-        {select_date name='milestone[due_on]' value=$milestone_data.due_on id=milestoneDueOn class=required}
-      {/wrap}
-      </div>
-    {/wrap}
-  {/if}
-  
-  {wrap field=body}
-    {label for=milestoneBody}Notes{/label}
-    {editor_field name='milestone[body]' id=milestoneBody inline_attachments=$milestone_data.inline_attachments}{$milestone_data.body}{/editor_field}
-  {/wrap}
-  
-  {wrap field=assignees}
-    {label for=milestoneAssignees}Assignees{/label}
-    {select_assignees_inline name='milestone[assignees]' value=$milestone_data.assignees object=$active_milestone project=$active_project choose_responsible=true}
-  {/wrap}
-</div>
+<div class="uk-grid">
 
-<div class="form_right_col">
-  {wrap field=priority}
-    {label for=milestonePriority}Priority{/label}
-    {select_priority name='milestone[priority]' value=$milestone_data.priority id=milestonePriority}
-  {/wrap}
-  
-  {wrap field=tags}
-    {label for=milestoneTags}Tags{/label}
-    {select_tags name='milestone[tags]' value=$milestone_data.tags project=$active_project id=milestoneTags}
-  {/wrap}
+    <div class="uk-width-1-1 uk-width-medium-3-4">
+    
+        <div class="field-group">
+        
+            <div class="field">
+                {label for=milestoneName required=yes class="uk-form-label"}Summary{/label}
+                {text_field name='milestone[name]' value=$milestone_data.name id=milestoneName class='title required validate_minlength 3 uk-form-large uk-width-1-1'}
+            </div>
+                      
+            <div class="field">
+                {label for=milestoneBody class="uk-form-label"}Notes{/label}
+                {editor_field name='milestone[body]' id=milestoneBody inline_attachments=$milestone_data.inline_attachments class="redactor"}{$milestone_data.body}{/editor_field}
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <div class="uk-width-1-1 uk-width-medium-1-4">
+    
+    	<div class="field-group">
+        
+            {if $active_milestone->isNew()}
+            
+                <div class="field">
+                
+                    {label for=milestoneStartOn required=yes class="uk-form-label"}Start on{/label}
+                    <div class="uk-form-icon uk-width-1-1">
+                        <i class="uk-icon-calendar"></i>
+                        <input type="text" name="milestone[start_on]" id="milestoneStartOn" class="required datepicker uk-form-medium uk-width-1-1" value="{$milestone_data.start_on}" />
+                    </div>
+                    
+                </div>
+                
+                <div class="field">
+                
+                    {label for=milestoneDueOn required=yes class="uk-form-label"}Due on{/label}
+                    <div class="uk-form-icon uk-width-1-1">
+                        <i class="uk-icon-calendar"></i>
+                        <input type="text" name="milestone[due_on]" id="milestoneDueOn" class="required datepicker uk-form-medium uk-width-1-1" value="{$milestone_data.due_on}" />
+                    </div>
+                    
+                </div>
+                        
+            {/if}
+        
+            <div class="field">
+                {label for=milestonePriority class="uk-form-label"}Priority{/label}
+                {select_priority name='milestone[priority]' value=$milestone_data.priority id=milestonePriority class="uk-form-medium uk-width-1-1"}
+            </div>
+          
+            <div class="field">
+                {label for=milestoneTags class="uk-form-label"}Tags{/label}
+                {select_tags name='milestone[tags]' value=$milestone_data.tags project=$active_project id=milestoneTags class="uk-form-medium uk-width-1-1"}
+            </div>
+        
+        </div>
+        
+        <div class="field-group">
+            
+            <div class="field">
+                {label for=milestoneAssignees class="uk-form-label"}Assignees{/label}
+                {select_assignees_inline name='milestone[assignees]' value=$milestone_data.assignees object=$active_milestone project=$active_project choose_responsible=true}
+            </div>
+        
+        </div>
+        
+    </div>
+    
 </div>
-<div class="clear"></div>
