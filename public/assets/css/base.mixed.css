@@ -505,3 +505,30 @@ input[type="checkbox"]:checked + label:before {
 .category-list #manage_categories a {
     color: #999999;
 }
+
+
+
+
+
+
+
+
+
+
+#page_content {
+    position: relative;
+    padding: 0;
+}
+
+.top_tabs {
+    padding: 0;
+    margin: 50px 40px 0;
+}
+
+h3.day_section {
+    padding: 10px 40px !important;
+}
+
+#recent_activities div.activity {
+    padding: 20px 40px;
+}

@@ -1,7 +1,2 @@
-compile/*
-cache/*
-upload/*
-work/*
-logs/*
-thumbnails/*
+var/*
 config/config.php

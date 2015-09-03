@@ -30,7 +30,7 @@
   require_once ANGIE_PATH . '/functions/general.php';
   require_once ANGIE_PATH . '/functions/web.php';
   
-  $path = ENVIRONMENT_PATH . '/thumbnails/' . $name;
+  $path = ENVIRONMENT_PATH . '/var/uploads/images/' . $name;
   if(!is_file($path) || (filesize($path) != $size)) {
     header("HTTP/1.0 404 Not Found");
     die();

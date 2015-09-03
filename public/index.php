@@ -44,8 +44,6 @@
     print '.</p>';
     die();
   } // if
-  
-  // Initialize application and handle request
-  require_once ROOT . '/init.php';
 
-?>
+  // Initialize application and handle request
+  require_once ROOT . '/system/bootstrap.php';

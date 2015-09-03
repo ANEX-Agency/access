@@ -10,6 +10,6 @@
     define('ENVIRONMENT_PATH', str_replace('\\', '/', realpath(dirname(__FILE__) . '/..')));
   } // if
 
-  require_once ROOT . '/defaults.php';
+  require_once ROOT . '/system/defaults.php';
 
 ?>
