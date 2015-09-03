@@ -532,3 +532,9 @@ h3.day_section {
 #recent_activities div.activity {
     padding: 20px 40px;
 }
+
+
+.uk-tab>li>a {
+    padding: 8px 40px 8px 40px;
+}
+

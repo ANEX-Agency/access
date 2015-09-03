@@ -61,7 +61,10 @@
           $this->smarty->plugins_dir[] = $path . '/helpers';
           require_once $path . '/init.php';
         } // foreach
-        
+ 
+        // niklas
+        require_once ROOT . '/plugins/lightbox/init.php';
+       
         $this->router->loadByModules($modules);
         $this->events_manager->loadByModules($modules);
       } // if

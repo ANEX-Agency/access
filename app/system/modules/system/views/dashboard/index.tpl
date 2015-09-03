@@ -12,16 +12,36 @@
 
     <div id="dashboard">
     
-    	<div class="uk-grid">
+    	<div class="uk-grid uk-grid-collapse">
         
         	<div class="uk-width-1-1 uk-width-medium-3-4">
             
                 <!-- Dashboard sections -->
                 <div id="dashboard_sections">
-              
-                    <ul class="top_tabs dashboard_tabs">
+                
+                    <!-- This is the container of the toggling elements 
+                    <ul data-uk-switcher="{literal}{connect:'#my-id'}{/literal}">
+                        <li><a href="#">Nav 1</a></li>
+                        <li><a href="#">Nav 2</a></li>
+                        <li><a href="#">Nav 3</a></li>
+                    </ul>-->
+                    
+                    <!-- This is the container of the content items 
+                    <ul id="my-id" class="uk-switcher">
+                        <li>Sample Content 1</li>
+                        <li>Sample Content 2</li>
+                        <li>Sample Content 3</li>
+                    </ul>-->
+                
+                    <!--<ul class="uk-tab" data-uk-tab>
                         {foreach from=$dashboard_sections->data key=dashboard_section_name item=dashboard_section name=dashboard_sections}
-                            <li id="dashboard_section_{$dashboard_section_name}"><a href="{$dashboard_section.url}"><span>{$dashboard_section.text}</span></a></li>
+                            <li id="dashboard_section_{$dashboard_section_name}"><a href="{$dashboard_section.url}">{$dashboard_section.text}</a></li>
+                        {/foreach}
+                    </ul>-->
+                                  
+                    <ul id="tabs-dashboard" class="uk-tab" data-uk-tab>
+                        {foreach from=$dashboard_sections->data key=dashboard_section_name item=dashboard_section name=dashboard_sections}
+                            <li id="dashboard_section_{$dashboard_section_name}"><a href="{$dashboard_section.url}">{$dashboard_section.text}</a></li>
                         {/foreach}
                     </ul>
                 

@@ -673,7 +673,7 @@ App.widgets.DashboardSections = function() {
 
       section_content_wrapper = wrapper.find('div.top_tabs_object_list .dashboard_wide_sidebar_inner_2');
       
-      wrapper.find('ul.dashboard_tabs a').click(function(e) {
+      wrapper.find('#tabs-dashboard a').click(function(e) {
         var link = $(this);
         var list_item = link.parent();
 
@@ -699,14 +699,14 @@ App.widgets.DashboardSections = function() {
         section_content.show();
         
         // Mark tab as selected
-        wrapper.find('ul.dashboard_tabs li').removeClass('selected');
+        wrapper.find('#tabs-dashboard li').removeClass('selected');
         list_item.addClass('selected');
         
         return false;
       });
       
       // Select first section automatically
-      wrapper.find('ul.dashboard_tabs li:first a').click(); 
+      wrapper.find('#tabs-dashboard li:first a').click(); 
     }
     
   }

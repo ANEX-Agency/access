@@ -1645,7 +1645,7 @@ dl.details_list dd {
 .project_progress .progress_wrapper .progress span {
     display: none;
 }
-
+/*
 .top_tabs li {
     position: relative;
     margin-right: 7px;
@@ -1690,7 +1690,7 @@ dl.details_list dd {
 .top_tabs {
     padding: 10px 0 0 0;
 }
-
+*/
 .taskcompletedactivitylog_activity a {
     color: #666666;
 }
@@ -1699,7 +1699,7 @@ dl.details_list dd {
     color: #333333;
 }
 
-.top_tabs li.selected,
+/*.top_tabs li.selected,*/
 .dashboard_wide_sidebar {
     background-color: #FFFFFF;
 }
@@ -1874,7 +1874,7 @@ h3.day_section {
     padding: 4px 0 4px 22px !important;
 }
 
-.top_tabs li.selected {
+/*.top_tabs li.selected {
     background-color: #FFFFFF;
     border-bottom-width: 0;
     height: 30px;
@@ -1886,7 +1886,7 @@ h3.day_section {
     height: 30px;
     line-height: 30px;
 }
-
+*/
 .dashboard_sidebar ul.dashboard_sidebar_list {}
 
 #who_is_online .title h2 {

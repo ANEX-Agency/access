@@ -715,6 +715,7 @@ table.module_role_permissions th.permission.wide, table.module_role_permissions 
   text-align: center;
 }
 
+/*
 .top_tabs {
   margin: 0px;
   padding: 0px 0px 0px 10px;
@@ -777,7 +778,7 @@ table.module_role_permissions th.permission.wide, table.module_role_permissions 
   -webkit-border-radius: 5px;
   background: #f1f1f1;
 }
-
+*/
 .dashboard_wide_sidebar {
   border: 1px solid #ddd;
   border-right-width: 2px;

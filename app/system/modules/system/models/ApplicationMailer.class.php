@@ -290,6 +290,7 @@ class ApplicationMailer extends AngieObject {
     $this->_mailer = Swift_Mailer::newInstance($transport);
     $this->_connected = true;
     
+/*
     // Set logger
     if(DEBUG >= DEBUG_DEVELOPMENT) {
       Swift_ClassLoader::load("Swift_Log_AngieLog");
@@ -299,6 +300,8 @@ class ApplicationMailer extends AngieObject {
       
       Swift_LogContainer::setLog($logger);
     } // if
+*/
+
     return $this->_mailer;
   } // connect
   

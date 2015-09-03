@@ -17,6 +17,10 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         
         <link rel="shortcut icon" href="{brand what=favicon}" type="image/x-icon" />
+
+        {php}
+        do_action('print_head');
+        {/php}
         
         <link rel="stylesheet" type="text/css" media="screen" id="style-external" href="{$assets_url}/stylesheets/external.css" />
         <link rel="stylesheet" type="text/css" media="screen" id="style-main" href="{$assets_url}/css.php?{$assets_query_string}" />
@@ -385,6 +389,8 @@
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/uikit/2.22.0/js/components/datepicker.min.js"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/uikit/2.22.0/js/components/accordion.min.js"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/uikit/2.22.0/js/components/tooltip.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/uikit/2.22.0/js/core/tab.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/uikit/2.22.0/js/core/switcher.min.js"></script>
 
         <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/remodal/1.0.2/remodal.min.js"></script>-->
 
