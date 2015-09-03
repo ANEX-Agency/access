@@ -757,9 +757,11 @@ App.widgets.DashboardFavoriteProjects = function() {
   
   var check_favorite_list = function (favorite_list) {
     if (favorite_list.find('li').length==1) {
-      favorite_list.find('li.drop_here').show();
+		console.log('it shows');
+      favorite_list.find('li.drop').show();
     } else {
-      favorite_list.find('li.drop_here').hide();
+		console.log('dont shows');
+      favorite_list.find('li.drop').hide();
     } // if
   } 
   
@@ -794,7 +796,7 @@ App.widgets.DashboardFavoriteProjects = function() {
               '<span class="name">' + ui.helper.find('td.name').html() + '</span>' +
             '</li>';
             
-            var new_favorite_row = favorite_list.find('.drop_here').before(new_entry).prev();
+            var new_favorite_row = favorite_list.find('.drop').before(new_entry).prev();
             init_favorite_row(new_favorite_row);
             
             $.ajax({

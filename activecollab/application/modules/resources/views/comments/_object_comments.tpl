@@ -89,7 +89,7 @@
                     
                     <div class="field">
                     
-                        {editor_field name='comment[body]' class='redactor validate_callback tiny_value_present' id=commentBody}{/editor_field}
+                        <textarea name="comment[body]" id="commentBody" class="redactor" placeholder="{lang}Enter Comment{/lang}">{$comment_data.body}</textarea>
                         
                     </div>
                     

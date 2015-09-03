@@ -107,7 +107,7 @@
   } // if
   
   if(!defined('RESIZE_SMALLER_THAN')) {
-    define('RESIZE_SMALLER_THAN', 524288); // resize images smaller than 500kb
+    define('RESIZE_SMALLER_THAN', 5242880); // resize images smaller than 500kb
   } // if
   
   // If this option is set to True users session ID will be refreshed every time

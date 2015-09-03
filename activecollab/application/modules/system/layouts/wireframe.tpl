@@ -81,13 +81,13 @@
             <!-- HEADER > START -->
             <header>
             
-                <div id="logo">
+                <div id="logo" class="logo">
                     <a href="{assemble route=homepage}">
                         <img src="{brand what=logo}" alt="{$owner_company->getName()|clean} logo" title="{lang}Back to Start{/lang}" />
                     </a>
                 </div>
                     
-                <div id="user">
+                <div id="user" class="widget widget-user">
                 
                     <!--{if $logged_user->getFirstName()}
                         {assign var=_welcome_name value=$logged_user->getFirstName()}
@@ -308,6 +308,62 @@
 		<div id="side-panel" class="side-panel">
 		
 			<div class="inner">
+            
+				<div class="side-panel-section"> 
+                
+                    <div id="user" class="widget widget-user">
+                    
+                    	<div class="uk-grid" data-uk-grid-margin>
+                        
+                        	<div class="uk-width-1-1">
+                            
+                                <div class="uk-grid" data-uk-grid-match>
+                                
+                                    <div class="uk-width-1-2">
+                                    
+                                        <div class="avatar uk-vertical-align-middle">
+                                    
+                                            <img src="{$logged_user->getAvatarUrl(true)}" alt="" class="" />
+                                        
+                                        </div>
+                                        
+                                    </div>
+                                
+                                    <div class="uk-width-1-2">
+                                    
+                                        {if $logged_user->getFirstName()}
+                                            {assign var=_welcome_name value=$logged_user->getFirstName()}
+                                        {else}
+                                            {assign var=_welcome_name value=$logged_user->getDisplayName()}
+                                        {/if}
+                                        
+                                        <div class="message uk-vertical-align-middle">{lang name=$_welcome_name}Welcome back :name{/lang}</div>
+                                    
+                                    </div>
+                                    
+                                </div>                        
+                                                            
+                            </div>
+                        
+                        	<div class="uk-width-1-1">
+                            
+                                <div class="buttons">
+                                    <a href="{$logged_user->getViewUrl()}" class="user-link-profile {if $wireframe->current_menu_item == 'profile'}active{/if}"><span class="lnr lnr-user"></span></a>
+                                    {if $logged_user->isAdministrator()}
+                                        <a href="{assemble route=admin}" class="user-link-settings {if $wireframe->current_menu_item == 'admin'}active{/if}">
+                                            <span class="lnr lnr-cog"></span>
+                                        </a>
+                                    {/if}
+                                    {link href='?route=logout' class="user-link-logout"}<span class="lnr lnr-exit"></span>{/link}
+                                </div>
+                            
+                            </div>
+                        
+                        </div>
+                    
+                    </div>
+                    
+                </div>
 							
 				<div class="side-panel-section"> 
 					<nav></nav>

@@ -137,19 +137,18 @@
                     <!-- WIDGET: IMPORTANT > START -->
                     {if $important_items->count()}
                     
-                        <div id="widget-important" class="widget">
+                        <div id="widget-important" class="widget widget-important">
                         
                         	<div class="widget-header">
                                 <h2>{lang}Important{/lang}</h2>
                             </div>
                         
                         	<div class="widget-body">
-                                <ul class="dashboard_important_list">
+                                <ul>
                                     {foreach from=$important_items->data item=important_item}
                                         <li class="{$important_item.class}">
-                                            <a href="{$important_item.url}">
-                                                <i class="uk-icon-warning"></i>
-                                                <span>{$important_item.label}</span>
+                                            <a href="{$important_item.url}" title="">
+                                                <i class="uk-icon-warning"></i> {$important_item.label}
                                             </a>
                                         </li>
                                     {/foreach}
@@ -159,7 +158,7 @@
                         </div>
                         
                         <script type="text/javascript">
-                        App.widgets.DashboardImportantItems.init('dashboard_important');
+							App.widgets.DashboardImportantItems.init('widget-important');
                         </script>
                         
                     {/if}
@@ -168,7 +167,7 @@
                     
                     
                     <!-- WIDGET: PINNED PROJECTS > START -->
-                    <div id="pinned_projects" class="widget widget-pinned-projects">
+                    <div id="widget-pinned-projects" class="widget widget-pinned-projects">
                     
                         <div class="widget-header">
                             <h2>{lang}Favorite Projects{/lang}</h2>
@@ -192,7 +191,7 @@
                     </div>
                     
                     <script type="text/javascript">
-                    App.widgets.DashboardFavoriteProjects.init('pinned_projects');
+						App.widgets.DashboardFavoriteProjects.init('widget-pinned-projects');
                     </script>
                     <!-- WIDGET: PINNED PROJECTS > END -->
 

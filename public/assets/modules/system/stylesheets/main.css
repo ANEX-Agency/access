@@ -902,7 +902,7 @@ table.module_role_permissions th.permission.wide, table.module_role_permissions 
   display: none;
 }*/
 
-#pinned_projects.widget .drop_here {
+#pinned_projects.widget .drop {
   border-top-width : 1px;
   border-bottom : 0px;
   border-left-width : 1px;
@@ -916,7 +916,7 @@ table.module_role_permissions th.permission.wide, table.module_role_permissions 
   display: none;
 }
 
-#pinned_projects.widget .drop_here.hover {
+#pinned_projects.widget .drop.hover {
   background: #E4E2BD;
   color: #FFF;
 }
@@ -932,10 +932,7 @@ table.module_role_permissions th.permission.wide, table.module_role_permissions 
 }
 
 .dashboard_important_list li {
-  display: inline;
-  margin: 3px 7px 3px 0px;
   display: block;
-  float: left;
 }
 
 .dashboard_important_list li a:hover {

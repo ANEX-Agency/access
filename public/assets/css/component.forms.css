@@ -134,8 +134,6 @@ select {
 
 
 
-
-
 input[type=radio] + label {
     padding: 15px 25px !important;
     display: block;

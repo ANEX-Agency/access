@@ -6,7 +6,7 @@
   <div class="body">
     <dl class="properties">
       <dt>{lang}File Name{/lang}</dt>
-      <dd><a href="{$last_revision->getViewUrl()}">{$active_file->getName()|clean}</a></dd>
+      <dd><a href="{$last_revision->getViewUrl()}" download>{$active_file->getName()|clean}</a></dd>
       
       <dt>{lang}Version{/lang}</dt>
       <dd>#{$active_file->getRevision()} &mdash; {action_on_by user=$last_revision->getCreatedBy() datetime=$last_revision->getCreatedOn() action=Uploaded}</dd>
@@ -32,7 +32,7 @@
   {if $last_revision->hasPreview()}
     <div class="body file_preview">
       <p><a href="{$last_revision->getViewUrl()}"><img src="{$last_revision->getPreviewUrl()}" alt="" /></a></p>
-      <p class="details">{lang url=$last_revision->getViewUrl()}Image preview. <a href=":url">Click to download</a> full size image{/lang}</p>
+      <p class="details">{lang url=$last_revision->getViewUrl()}Image preview. <a href=":url" download>Click to download</a> full size image{/lang}</p>
     </div>
   {/if}
     

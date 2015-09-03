@@ -7,7 +7,7 @@
 
 <div class="uk-grid">
 
-	<div class="uk-width-2-3">
+	<div class="uk-width-1-1 uk-width-medium-2-3">
 
         <div class="list_view" id="files">
         
@@ -15,7 +15,7 @@
             
                 {if is_foreachable($files)}
                 
-                    {form method="POST" action=$mass_edit_url}
+                    {form method="POST" action=$mass_edit_url class="uk-form"}
                                 
                         <input type="hidden" name="object_types" value="files" />
                         
@@ -141,7 +141,7 @@
 
     </div>
     
-	<div class="uk-width-1-3">
+	<div class="uk-width-1-1 uk-width-medium-1-3">
 
         <!-- CATEGORY LIST START -->
         <ul class="category-list">

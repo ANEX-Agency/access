@@ -67,7 +67,7 @@ $(document).ready(function() {
 //				]
 //			}
 		],
-		searchfield: true,
+		//searchfield: true,
 		//dragOpen: true//{
 		   // drag open options
 		//}
@@ -112,9 +112,16 @@ $(document).ready(function() {
 
 	$( '.redactor' ).redactor( {
 		buttons: buttons,
-		cleanup: true,
-		removeEmptyTags: true,
+//		cleanup: true,
+//		removeEmptyTags: true,
+//		linebreaks: false
+
+		focus: true,
+		//plugins: ['table', 'bufferbuttons'],
+		//buttonSource: true,
+		paragraphize: false,
 		linebreaks: false
+
 	} );
   	   
 });

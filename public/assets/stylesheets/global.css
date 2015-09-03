@@ -1084,7 +1084,7 @@ div.resource ul {
 }
 
 div.resource ul li {
-  display: inline;
+  /*display: inline;*/
 }
 
 .object_list {

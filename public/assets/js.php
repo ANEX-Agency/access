@@ -36,7 +36,7 @@
     ASSETS_PATH . '/javascript/jquery.blockui.js',
     ASSETS_PATH . '/javascript/jquery.jeditable.js',
     ASSETS_PATH . '/javascript/jquery.uni-form.js',
-    //ASSETS_PATH . '/javascript/jquery.checkboxes.js',
+    ASSETS_PATH . '/javascript/jquery.checkboxes.js',
     ASSETS_PATH . '/javascript/jquery.datepicker.js',
     ASSETS_PATH . '/javascript/jquery.scrollTo.js',
     ASSETS_PATH . '/javascript/jquery.scalebigimages.js',

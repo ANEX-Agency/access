@@ -6,7 +6,7 @@
 
 .side-panel {}
 
-.side-panel .inner {}
+.side-panel .inner {padding: 0;}
 
 .side-panel .side-panel-section {
     margin: 0 0 50px 0;

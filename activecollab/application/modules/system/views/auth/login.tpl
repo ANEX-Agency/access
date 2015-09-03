@@ -10,7 +10,7 @@
 
     <div class="form">
     
-        {form method=post autofocus=$auto_focus show_errors=no}
+        {form method=post autofocus=false uni=false show_errors=no}
         	
             <div class="field-wrap">
                 <input type="text" name="login[email]" value="{$login_data.email}" id="" class="" tabindex="1" placeholder="E-Mail" />
